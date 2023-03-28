@@ -1,23 +1,26 @@
 <?php
-include "./DB/dbConnection.php";
-include "./DB/dbClass.php";
-include "./apps/config.php";
-$heading = "Product";
+     include "./DB/dbConnection.php";
+     include "./DB/dbClass.php";
+     include "./apps/config.php";
+     $heading = "Product";
 
-$tb = "tb_product";
-//get total count of products
-$pd = new dbClass();
-$numpage = ceil($pd->dbCount($tb) / MAXPERPAGE);
-$pg = 1;
-$offset = 0;
-if (isset($_GET['pg'])) {
-     $pg = $_GET['pg'];
-     $offset = ($pg - 1) * MAXPERPAGE;
-}
-//get category data
-$tb_ref = "tb_category";
-$getCG = new dbClass();
-$categorys = $getCG->dbSelect($tb_ref, "*", "", "order by cg_dateCreated asc");
+     $tb = "tb_product";
+     
+     //get total count of products
+     $pd = new dbClass();
+
+     $numpage = ceil($pd->dbCount($tb) / MAXPERPAGE);
+     $pg = 1;
+     $offset = 0;
+     if (isset($_GET['pg'])) {
+          $pg = $_GET['pg'];
+          $offset = ($pg - 1) * MAXPERPAGE;
+     }
+
+     //get category data
+     $tb_ref = "tb_category";
+     $getCG = new dbClass();
+     $categorys = $getCG->dbSelect($tb_ref, "*", "", "order by cg_dateCreated asc");
 ?>
 
 <div class="col-lg-12 grid-margin stretch-card">
@@ -66,7 +69,7 @@ $categorys = $getCG->dbSelect($tb_ref, "*", "", "order by cg_dateCreated asc");
                          <tbody>
                               <?php
                               $getPD = new dbClass();
-                              $products = $getPD->dbSelect($tb, "*", "", "order by pd_dateCreated asc limit " . MAXPERPAGE . " offset $offset");
+                              $products = $getPD->dbSelect($tb, "*", "", "order by pd_dateCreated DESC limit " . MAXPERPAGE . " offset $offset");
                               if ($products) {
                                    $i = 1;
                                    foreach ($products as $product) {
@@ -101,10 +104,10 @@ $categorys = $getCG->dbSelect($tb_ref, "*", "", "order by cg_dateCreated asc");
                                                   <?= $product['pd_countInStock'] ?>
                                              </td>
                                              <td>
-                                                  <?= $product['pd_regularPrice'] ?>
+                                                  <?= "$".number_format($product['pd_regularPrice'], 2) ?>
                                              </td>
                                              <td>
-                                                  <?= $product['pd_salePrice'] ?>
+                                                  <?= "$".number_format($product['pd_salePrice'], 2) ?>
                                              </td>
                                              <td>
                                                   <a class="btn btn-warning btn-sm mx-1 py-2" data-bs-toggle="modal"

@@ -4,6 +4,14 @@
     
 
     $(document).ready(function($){
+        // get current url
+        var current_url = window.location.href;
+
+        // make active on menu nav bar
+        $(".main-menu a").filter(function() {
+            return this.href == current_url;
+        }).parent().addClass("current-list-item");
+
 
         // testimonial sliders
         $(".testimonial-sliders").owlCarousel({
@@ -76,6 +84,30 @@
                 }
             }
         });
+
+        // new arrival product carousel
+        $(".new-arrival-product, .sales-product, .related-product-section").owlCarousel({
+            items: 4,
+            loop: true,
+            autoplay: true,
+            margin: 30,
+            responsive:{
+                0:{
+                    items:1,
+                    nav:false
+                },
+                600:{
+                    items:3,
+                    nav:false
+                },
+                1000:{
+                    items:4,
+                    nav:false,
+                    loop:true
+                }
+            }
+        });
+        
 
         // count down
         if($('.time-countdown').length){  

@@ -13,7 +13,9 @@
           <div class="row">
                <div class="col-lg-4 col-md-6">
                     <div class="single-latest-news">
-                         <a href="/news/news-detail"><div class="latest-news-bg news-bg-1" style="background-image: url(../../../assets/frontend/img/latest-news/news-bg-1.jpg)"></div></a>
+                         <a href="/news/news-detail">
+                              <div class="latest-news-bg news-bg-1" style="background-image: url(../../../assets/frontend/img/latest-news/news-bg-1.jpg)"></div>
+                         </a>
                          <div class="news-text-box">
                               <h3><a href="/news/news-detail">You will vainly look for fruit on it in autumn.</a></h3>
                               <p class="blog-meta">
@@ -27,7 +29,9 @@
                </div>
                <div class="col-lg-4 col-md-6">
                     <div class="single-latest-news">
-                         <a href="/news/news-detail"><div class="latest-news-bg news-bg-2" style="background-image: url(../../../assets/frontend/img/latest-news/news-bg-2.jpg)"></div></a>
+                         <a href="/news/news-detail">
+                              <div class="latest-news-bg news-bg-2" style="background-image: url(../../../assets/frontend/img/latest-news/news-bg-2.jpg)"></div>
+                         </a>
                          <div class="news-text-box">
                               <h3><a href="/news/news-detail">A man's worth has its season, like tomato.</a></h3>
                               <p class="blog-meta">
@@ -41,7 +45,9 @@
                </div>
                <div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
                     <div class="single-latest-news">
-                         <a href="/news/news-detail"><div class="latest-news-bg news-bg-3" style="background-image: url(../../../assets/frontend/img/latest-news/news-bg-3.jpg)"></div></a>
+                         <a href="/news/news-detail">
+                              <div class="latest-news-bg news-bg-3" style="background-image: url(../../../assets/frontend/img/latest-news/news-bg-3.jpg)"></div>
+                         </a>
                          <div class="news-text-box">
                               <h3><a href="/news/news-detail">Good thoughts bear good fresh juicy fruit.</a></h3>
                               <p class="blog-meta">

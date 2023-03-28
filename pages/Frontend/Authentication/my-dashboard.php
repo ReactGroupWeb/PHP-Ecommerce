@@ -29,7 +29,7 @@
                               <div class="col-md-4 my-auto text-center">
                                    <i class="fas fa-wallet dashboard-item-icon"></i>
                               </div>
-                              <div class="col-md-8 text-right">
+                              <div class="col-md-8 text-end">
                                    <div class="card-body">
                                         <h3 class="card-title text-light">Total Cost</h3>
                                         <h4 class="card-text text-light font-weight-bold">$1035.00</h4>
@@ -47,7 +47,7 @@
                               <div class="col-md-4 my-auto text-center">
                                    <i class="fas fa-cash-register dashboard-item-icon"></i>
                               </div>
-                              <div class="col-md-8 text-right">
+                              <div class="col-md-8 text-end">
                                    <div class="card-body">
                                         <h3 class="card-title text-light">Total Purchased</h3>
                                         <h4 class="card-text text-light font-weight-bold">$1035.00</h4>
@@ -65,7 +65,7 @@
                               <div class="col-md-4 my-auto text-center">
                                    <i class="fas fa-truck dashboard-item-icon"></i>
                               </div>
-                              <div class="col-md-8 text-right">
+                              <div class="col-md-8 text-end">
                                    <div class="card-body">
                                         <h3 class="card-title text-light">Total Delivered</h3>
                                         <h4 class="card-text text-light font-weight-bold">100</h4>

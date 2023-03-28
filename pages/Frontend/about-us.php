@@ -98,39 +98,47 @@
                </div>
           </div>
           <div class="row">
-               <div class="col-lg-4 col-md-6">
-                    <div class="single-team-item">
-                         <div class="team-bg team-bg-1" style="background-image: url(../../assets/frontend/img/team/team-1.jpg)"></div>
-                         <h4>Jimmy Doe <span>Farmer</span></h4>
-                         <ul class="social-link-team">
-                              <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                              <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                              <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                         </ul>
-                    </div>
-               </div>
-               <div class="col-lg-4 col-md-6">
-                    <div class="single-team-item">
-                         <div class="team-bg team-bg-2" style="background-image: url(../../assets/frontend/img/team/team-2.jpg)"></div>
-                         <h4>Marry Doe <span>Farmer</span></h4>
-                         <ul class="social-link-team">
-                              <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                              <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                              <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                         </ul>
-                    </div>
-               </div>
-               <div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
-                    <div class="single-team-item">
-                         <div class="team-bg team-bg-3" style="background-image: url(../../assets/frontend/img/team/team-3.jpg)"></div>
-                         <h4>Simon Joe <span>Farmer</span></h4>
-                         <ul class="social-link-team">
-                              <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                              <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                              <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                         </ul>
-                    </div>
-               </div>
+
+               <?php
+                    $heading = "User";
+                    $get_teams = new dbClass();
+                    $table = "tb_user";
+                    $field = "*";
+                    $condition = "";
+                    $order = "ORDER BY us_id DESC";
+
+                    $teams = $get_teams->dbSelect($table, $field, $condition, $order);
+
+
+                    foreach($teams as $team){
+                         ?>
+                              <div class="col-lg-3 col-md-6">
+                                   <div class="single-team-item">
+                                        <div class="team-bg team-bg-1" style="background-image: url(../assets/images/<?= strtolower($heading) ?>/<?= $team['us_image'] ?>)"></div>
+                                        <h4>
+                                             <?= $team['us_name'] ?> 
+                                             <span>
+                                                  <?php
+                                                       if($team['us_isAdmin'] == 1){
+                                                            echo "Admin";
+                                                       }
+                                                       else{
+                                                            echo "User";
+                                                       }
+                                                  ?>
+                                             </span>
+                                        </h4>
+                                        <ul class="social-link-team">
+                                             <li><a href="/"><i class="fab fa-facebook-f"></i></a></li>
+                                             <li><a href="/"><i class="fab fa-twitter"></i></a></li>
+                                             <li><a href="/"><i class="fab fa-instagram"></i></a></li>
+                                        </ul>
+                                   </div>
+                              </div>
+                         
+                         <?php
+                    }
+               ?>
           </div>
      </div>
 </div>

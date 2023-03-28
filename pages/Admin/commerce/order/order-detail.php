@@ -1,8 +1,7 @@
 <?php $heading = "Order Detail" ?>
 <div class="container-scroller">
      <!-- Sidebar Component -->
-     <?php require 'components/Admin/sidebar.php'; ?>
-     <div class="container-fluid page-body-wrapper">
+     <div class="container-fluid">
           <?php require 'components/Admin/navbar.php'; ?>
           <div class="main-panel">
                <div class="content-wrapper">
@@ -221,8 +220,6 @@
                          </div>
                     </div>
                </div>
-               <!-- Footer Component -->
-               <?php require 'components/Admin/footer.php'; ?>
           </div>
      </div>
 

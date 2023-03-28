@@ -32,24 +32,19 @@
                                    <p class="my-3">Mr. Jonh Fernandez</p>
                               </div>
                               <div class="col-md-6 border-bottom">
-                                   <p class="my-3">jonh.fernandez@gmail.com</p>
-                                   
+                                   <p class="my-3">jonh.fernandez@gmail.com</p>      
                               </div>
                               <div class="col-md-12 border-bottom">
-                                   <p class="my-3">+185 9655 9225 852</p>
-                                   
+                                   <p class="my-3">+185 9655 9225 852</p>      
                               </div>
                               <div class="col-md-12 border-bottom">
-                                   <p class="my-3">02-Jul-1985</p>
-                                   
+                                   <p class="my-3">02-Jul-1985</p>      
                               </div>
                               <div class="col-md-12 border-bottom">
-                                   <p class="my-3">Area 51</p>
-                                   
+                                   <p class="my-3">Area 51</p>      
                               </div>
                               <div class="col-md-12 border-bottom">
-                                   <p class="my-3">Nevada State, United State of America</p>
-                                   
+                                   <p class="my-3">Nevada State, United State of America</p>      
                               </div>
                          </div>
 
@@ -108,7 +103,6 @@
                               <input type="address" name="address" class="form-control" value="Nevada State, United State of America" id="address">
                          </div>
                          
-                        
                          <button type="submit" class="btn btn-warning float-right text-dark font-weight-bold"><i class="fas fa-tools mr-2"></i>Update</button>
                     </form>
                </div>

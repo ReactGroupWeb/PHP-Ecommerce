@@ -1,7 +1,6 @@
 <!-- Menu NavBar Section -->
 <?php require 'components/Frontend/menu-navbar.php'; ?>
 
-
 <!-- breadcrumb-section -->
 <div class="breadcrumb-section breadcrumb-bg">
      <div class="container">
@@ -16,8 +15,6 @@
      </div>
 </div>
 <!-- end breadcrumb section -->
-
-
 
 <div class="container-fluid px-5">
      <div class="row my-5">

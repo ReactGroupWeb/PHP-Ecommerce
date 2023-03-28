@@ -44,9 +44,22 @@
                </div>
                <div class="col-lg-4">
                     <div class="contact-form-wrap">
+                         <?php
+                              $get_company = new dbClass();
+                              $table = "tb_company";
+                              $field = "*";
+                              $condition = "";
+                              $order = "";
+
+                              $company = $get_company->dbSelectOne($table, $field, $condition, $order);
+
+                         
+                         ?>
+
+
                          <div class="contact-form-box">
                               <h4><i class="fas fa-map"></i> Shop Address</h4>
-                              <p>34/8, East Hukupara <br> Gifirtok, Sadan. <br> Country Name</p>
+                              <p><?php echo $company['cp_address'] ?></p>
                          </div>
                          <div class="contact-form-box">
                               <h4><i class="far fa-clock"></i> Shop Hours</h4>
@@ -54,7 +67,19 @@
                          </div>
                          <div class="contact-form-box">
                               <h4><i class="fas fa-address-book"></i> Contact</h4>
-                              <p>Phone: +00 111 222 3333 <br> Email: support@fruitkha.com</p>
+                              <p>
+                                   Phone: <a class="text-dark" href="tel:<?php echo $company['cp_phone'] ?>"><?php echo $company['cp_phone'] ?></a> 
+                                   <br> 
+                                   Email: <a class="text-dark" href="mailto:<?php echo $company['cp_email'] ?>"><?php echo $company['cp_email'] ?></a>
+                                   <br>
+                                   Facebook: <a class="text-dark" href="<?php echo $company['cp_facebook'] ?>"><?php echo $company['cp_facebook'] ?></a>
+                                   <br>
+                                   Twitter: <a class="text-dark" href="<?php echo $company['cp_twitter'] ?>"><?php echo $company['cp_twitter'] ?></a>
+                                   <br>
+                                   Instagram: <a class="text-dark" href="<?php echo $company['cp_instagram'] ?>"><?php echo $company['cp_instagram'] ?></a>
+                                   <br>
+                                   Telegram: <a class="text-dark" href="<?php echo $company['cp_telegram'] ?>"><?php echo $company['cp_telegram'] ?></a>
+                              </p>
                          </div>
                     </div>
                </div>
@@ -77,7 +102,7 @@
 
 <!-- google map section -->
 <div class="embed-responsive embed-responsive-21by9">
-     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.7706603336287!2d104.88850131490558!3d11.568291891787132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109519fe4077d69%3A0x20138e822e434660!2sRUPP%20(Royal%20University%20of%20Phnom%20Penh)!5e0!3m2!1sen!2skh!4v1678865093388!5m2!1sen!2skh" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.7706603336287!2d104.88850131490558!3d11.568291891787132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109519fe4077d69%3A0x20138e822e434660!2sRUPP%20(Royal%20University%20of%20Phnom%20Penh)!5e0!3m2!1sen!2skh!4v1678865093388!5m2!1sen!2skh" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="w-100"></iframe>
 </div>
 <!-- end google map section -->
 

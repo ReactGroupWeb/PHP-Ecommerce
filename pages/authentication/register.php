@@ -8,8 +8,7 @@
      <title>Corona Admin</title>
 
      <!-- plugins:css -->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 
      <!-- Layout styles -->
@@ -54,7 +53,8 @@
                                         <p class="sign-up text-center">Already have an Account?<a href="/login"
                                                   onclick="toLogin()"> Sign In</a>
                                         </p>
-                                        <p class="terms">By creating an account you are accepting our<a href="#"> Terms
+                                        <p class="terms">By creating an account you are accepting our<a href="#">
+                                                  Terms
                                                   &
                                                   Conditions</a></p>
                                    </form>
