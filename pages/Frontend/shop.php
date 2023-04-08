@@ -29,7 +29,7 @@
                $table_category = "tb_category as c";
                
                $field = "p.pd_id, p.cg_id, p.pd_name, p.pd_image, p.pd_regularPrice, p.pd_salePrice, p.pd_dateCreated, c.cg_name AS category_name";
-               $condition = "";
+               $condition = "p.pd_countInStock != 0";
                $order = "ORDER BY p.pd_dateCreated DESC limit 16";
 
                $join_condition = "c.cg_id = p.cg_id";
@@ -46,7 +46,7 @@
                                         <li class="active" data-filter="*">All</li>
                                         <?php
                                              $displayed_category = []; // track the display of categories
-                                             $used_categories = []; 
+                                   
                                              foreach($products as $product_category){
                                                   $category_name = strtolower($product_category['category_name']);
 
@@ -96,7 +96,21 @@
                                                             <?php
                                                        }
                                                   ?>
-                                                  <a href="/shopping-cart" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+
+                                                  <form action="../../DB/frontend/add-to-cart.php" method="POST">
+                                                       <?php
+                                                            if(isset($_SESSION['us_id'])){
+                                                                 $user_id = $_SESSION['us_id'];
+                                                            }
+                                                       ?>
+                                                       <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+                                                       <input type="hidden" name="product_id" value="<?php echo $product['pd_id']; ?>">
+                                                       <input type="hidden" name="instance" value="cart">
+                                                       <input type="hidden" name="quantity" value="1">
+
+                                                       <button type="submit" name="add-to-cart" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                                                  </form> 
+
                                              </div>
                                         </div>
                                    <?php

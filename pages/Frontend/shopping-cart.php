@@ -41,7 +41,7 @@
                                         $table_shopping_cart = "tb_shopping_cart as sc";
                                         $table_product = "tb_product as p";
 
-                                        $field = "sc.id, sc.quantity, sc.created_at, p.pd_name, p.pd_image, p.pd_regularPrice, p.pd_salePrice";
+                                        $field = "sc.id, sc.product_id, sc.quantity, sc.created_at, p.pd_name, p.pd_image, p.pd_regularPrice, p.pd_salePrice";
 
                                         $condition = "";
                                         if(isset($_SESSION['us_id'])){
@@ -55,12 +55,24 @@
                                         $table_join = $table_shopping_cart . " INNER JOIN " . $table_product . " ON " . $join_condition;
 
                                         $cart_tiems = $get_cart_items->dbSelect($table_join, $field, $condition, $order);     
+                                        $subtotal = 0;
                                         
                                         if(!empty($cart_tiems)){
                                              foreach($cart_tiems as $cItem){
                                                   ?>
                                                        <tr class="table-body-row">
-                                                            <td> <a href="#" class="text-dark"><i class="far fa-window-close"></i></a> </td>
+                                                      
+                                                            <td> 
+                                                                 <form action="../../DB/frontend/remove-cart-item.php" method="POST">
+                                                                      <?php if(isset($_SESSION['us_id'])){ $user_id = $_SESSION['us_id']; } ?>
+                                                                      <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+                                                                      <input type="hidden" name="product_id" value="<?php echo $cItem['product_id']; ?>">
+                                                                      <input type="hidden" name="quantity" value="<?php echo $cItem['quantity']; ?>">
+                                                                      <button type="submit" name="remove-cart-item" class="text-dark btn btn-lg"><i class="far fa-window-close"></i></button>
+                                                                 </form>
+
+
+                                                            </td>
                                                             <td><img src="../assets/images/<?= strtolower($heading) ?>/<?= $cItem['pd_image'] ?>" width="35"></td>
                                                             <td><?= $cItem['pd_name'] ?></td>
                                                             <td>
@@ -68,7 +80,7 @@
                                                                       echo $cItem['pd_salePrice']  ? number_format($cItem['pd_salePrice'], 2)  : number_format($cItem['pd_regularPrice'], 2);
                                                                  ?>
                                                             </td>
-                                                            <td><input type="number" placeholder="<?= $cItem['quantity'] ?>"></td>
+                                                            <td><input type="number" name="cart-quantity" value="<?= $cItem['quantity'] ?>" class="my-auto"></td>
 
                                                             <?php
                                                                  $totalPrice = 0;
@@ -80,6 +92,8 @@
                                                        </tr>
                                                   
                                                   <?php
+                                                 
+                                                  $subtotal +=  $cItem['quantity']  * ($cItem['pd_salePrice']  ? $cItem['pd_salePrice']  : $cItem['pd_regularPrice'] );
                                              } 
                                         }
                                         else{
@@ -116,23 +130,14 @@
 
                                    <?php
                                         if(!empty($cart_tiems)){
-                                             foreach($cart_tiems as $cItem){
-                                                  ?>
-                                                       <tr class="total-data">
-                                                            <td><strong>Subtotal: </strong></td>
-                                                            <td>$500</td>
-                                                       </tr>
-                                                       <tr class="total-data">
-                                                            <td><strong>Shipping: </strong></td>
-                                                            <td>$45</td>
-                                                       </tr>
-                                                       <tr class="total-data">
-                                                            <td><strong>Total: </strong></td>
-                                                            <td>$545</td>
-                                                       </tr>
-                                                  
-                                                  <?php
-                                             } 
+                                            
+                                             ?>
+                                                  <tr class="total-data">
+                                                       <td><strong>Subtotal: </strong></td>
+                                                       <td>$<?= number_format($subtotal, 2); ?></td>
+                                                  </tr>
+                                             <?php
+                                             
                                         }
                                         else{
                                              ?>

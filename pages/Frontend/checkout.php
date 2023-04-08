@@ -89,39 +89,76 @@
                               <thead>
                                    <tr>
                                         <th>Your order Details</th>
-                                        <th>Price</th>
+                                        <th>Unit Price</th>
+                                        <th>Qty</th>
+                                        <th>Total</th>
                                    </tr>
                               </thead>
                               <tbody class="order-details-body">
-                                   <tr>
-                                        <td>Product</td>
-                                        <td>Total</td>
-                                   </tr>
-                                   <tr>
-                                        <td>Strawberry</td>
-                                        <td>$85.00</td>
-                                   </tr>
-                                   <tr>
-                                        <td>Berry</td>
-                                        <td>$70.00</td>
-                                   </tr>
-                                   <tr>
-                                        <td>Lemon</td>
-                                        <td>$35.00</td>
-                                   </tr>
+                                   <?php
+                                        $get_cart_items = new dbClass();
+
+                                        $table_shopping_cart = "tb_shopping_cart as sc";
+                                        $table_product = "tb_product as p";
+
+                                        $field = "sc.id, sc.product_id, sc.quantity, sc.created_at, p.pd_name, p.pd_image, p.pd_regularPrice, p.pd_salePrice";
+
+                                        $condition = "";
+                                        if(isset($_SESSION['us_id'])){
+                                             $user_id = $_SESSION['us_id'];
+                                             $condition = "sc.user_id = $user_id AND sc.instance = 'cart'";
+                                        }
+
+                                        $order = "ORDER BY sc.created_at DESC";
+
+                                        $join_condition = "p.pd_id = sc.product_id";
+                                        $table_join = $table_shopping_cart . " INNER JOIN " . $table_product . " ON " . $join_condition;
+
+                                        $cart_tiems = $get_cart_items->dbSelect($table_join, $field, $condition, $order);     
+                                        $subtotal = 0;
+                                        $taxPrice = 0;
+                                        $totalPrice = 0;
+
+                                        foreach($cart_tiems as $cItem){
+                                             ?>
+                                                  <tr>
+                                                       <td><?= $cItem['pd_name'] ?></td>
+                                                       <td>
+                                                            $<?php
+                                                                 echo $cItem['pd_salePrice']  ? number_format($cItem['pd_salePrice'], 2)  : number_format($cItem['pd_regularPrice'], 2);
+                                                            ?>
+                                                       </td>
+                                                       <td><?= $cItem['quantity'] ?></td>
+                                                       <?php
+                                                            $totalPrice = 0;
+                                                            $price = $cItem['quantity']  * ($cItem['pd_salePrice']  ? $cItem['pd_salePrice']  : $cItem['pd_regularPrice'] );
+                                                            $totalPrice += $price;
+                                                       ?>
+
+                                                       <td>$<?= number_format($totalPrice, 2); ?></td>
+                                                  </tr>
+                                             <?php
+
+                                             $subtotal +=  $cItem['quantity']  * ($cItem['pd_salePrice']  ? $cItem['pd_salePrice']  : $cItem['pd_regularPrice'] );
+                                             $taxPrice = $subtotal * 0.1;
+                                             $totalPrice = $subtotal + $taxPrice;
+                                        }
+
+                                   ?>
+                                   
                               </tbody>
-                              <tbody class="checkout-details">
+                              <tbody class="checkout-details fw-bold">
                                    <tr>
-                                        <td>Subtotal</td>
-                                        <td>$190</td>
+                                        <td colspan="3">Subtotal</td>
+                                        <td>$<?= number_format($subtotal, 2); ?></td>
                                    </tr>
                                    <tr>
-                                        <td>Shipping</td>
-                                        <td>$50</td>
+                                        <td colspan="3">Tax (VAT 10%)</td>
+                                        <td>$<?= number_format($taxPrice, 2); ?></td>
                                    </tr>
                                    <tr>
-                                        <td>Total</td>
-                                        <td>$240</td>
+                                        <td colspan="3">Total</td>
+                                        <td>$<?= number_format($totalPrice, 2); ?></td>
                                    </tr>
                               </tbody>
                          </table>

@@ -40,23 +40,6 @@
                                    <li>
                                         <div class="header-icons">
                                              <?php if (isLogin()) { ?>
-                                                  <a class="shopping-cart" href="/shopping-cart"><i class="fas fa-heart"></i> 
-                                                       (
-                                                            <?php
-                                                                 
-                                                                 $get_count = new dbClass();
-                                                                 $table = "tb_shopping_cart";
-                                                                 $condition = "";
-                                                                 if(isset($_SESSION['us_id'])){
-                                                                      $user_id = $_SESSION['us_id'];
-                                                                      $condition = "user_id = $user_id AND instance = 'wishlist'";
-                                                                 }
-
-                                                                 $cart_item = $get_count->dbCount($table, $condition);
-                                                                 echo $cart_item;
-                                                            ?>
-                                                       )
-                                                  </a>
                                                   <a class="shopping-cart" href="/shopping-cart"><i class="fas fa-shopping-cart"></i> 
                                                        (
                                                             <?php
@@ -76,8 +59,36 @@
                                                   </a>
                                                   
                                              <?php } ?>
-                                             <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-                                             <a class="user-login"><i class="fas fa-user"></i></a>
+                                             <a class="mobile-hide search-bar-icon me-2" href="#"><i class="fas fa-search"></i></a>
+                                             <a class="user-login">
+                                                  <?php
+                                                       if(isLogin()){
+                                                            if(isset($_SESSION['us_id'])){
+                                                                 $user_id = $_SESSION['us_id'];
+                                                            }
+                                                            $heading = "User";
+                                                            $get_user = new dbClass();
+                                                            $table = "tb_user";
+                                                            $field = "us_id, us_image, us_name";
+                                                            $condition = "us_id = $user_id";
+                                                            $order = "";
+
+                                                            $user = $get_user->dbSelectOne($table, $field, $condition, $order);
+                                                       
+                                                            ?>
+                                                                 <img  style="background-image: url(../assets/images/<?= strtolower($heading) ?>/<?= $user['us_image'] ?>)" class="profile-menu-bar me-2"> <?= $user['us_name'] ?>
+                                                            <?php
+                                                       }
+                                                       else{
+                                                            ?>
+                                                                 <i class="fas fa-user"></i>
+                                                            <?php
+                                                       }
+                                                       
+                                                       
+                                                  ?>
+                                                  
+                                             </a>
                                              <ul class="sub-menu">
                                                   <?php if (isLogin()) { ?>
                                                        <li><a href="/my-dashboard"><i class="mx-2 fas fa-home"></i>My Dashboard</a></li>
