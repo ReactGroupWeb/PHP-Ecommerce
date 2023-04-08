@@ -439,8 +439,9 @@ a.read-more-btn:hover {
   color: #F28123;
 }
 
-a.boxed-btn, a.bordered-btn, a.cart-btn {
+a.boxed-btn, a.bordered-btn, a.cart-btn, button.cart-btn {
   border-radius: 50px;
+  border: none !important;
 }
 
 .section-title h3 {
@@ -1245,13 +1246,13 @@ div.owl-controls div.owl-nav div:hover {
   box-shadow: none;
 }
 
-a.cart-btn {
+a.cart-btn, button.cart-btn {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
 }
 
-a.cart-btn:hover {
+a.cart-btn:hover, button.cart-btn:hover {
   background-color: #051922;
   color: #F28123;
 }
@@ -1551,6 +1552,10 @@ div.owl-controls, .owl-controls div {
   position: absolute;
   right: 60px;
   margin-top: -30px;
+}
+
+.owl-carousel .owl-stage-outer .owl-stage {
+  transition: all 3s ease 0s !important; 
 }
 
 /* -----------------------------------------------------------------------------
@@ -2427,6 +2432,21 @@ ul.social-link-team li a {
   margin-bottom: 30px;
 }
 
+.single-product-item .btn-badge-new, .single-product-item .btn-badge-sale{
+  text-transform: capitalize;
+  padding: 4px 30px;
+  font-weight: bold;
+  border: none;
+  color: #fff;
+  background-image: linear-gradient(145deg, #EADEDB 0%, #F28123 50%, #ff9b06 75%);
+  clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 100%, 85% 0);
+}
+.single-product-item .btn-badge-sale{
+  padding: 4px 30px;
+  background-image: linear-gradient(145deg, #EADEDB 0%, #fd0000 50%, #ef6d6d 75%);
+}
+
+
 .product-image {
   height: 300px;
   padding: 30px;
@@ -2465,7 +2485,7 @@ p.sale-price, p.regular-price{
   font-weight: 700;
 }
 
-a.cart-btn {
+a.cart-btn, button.cart-btn {
   font-family: 'Poppins', sans-serif;
   display: inline-block;
   background-color: #F28123;
@@ -2473,7 +2493,7 @@ a.cart-btn {
   padding: 10px 20px;
 }
 
-a.cart-btn i {
+a.cart-btn i, button.cart-btn i {
   margin-right: 5px;
 }
 
@@ -2537,7 +2557,7 @@ input[type="number"] {
   margin-bottom: 15px;
 }
 
-.single-product-form a.cart-btn {
+.single-product-form a.cart-btn, .single-product-form button.cart-btn {
   margin-bottom: 15px;
 }
 

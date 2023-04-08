@@ -46,7 +46,7 @@
                          <div class="col-lg-3 col-md-6">
                               <div class="footer-box about-widget">
                                    <h2 class="widget-title">Company</h2>
-                                        <a href="/"> <img src="./assets/images/<?= strtolower($heading) ?>/<?= $company['cp_logo'] ?>"> </a>
+                                        <a href="/"> <img src="../assets/images/<?= strtolower($heading) ?>/<?= $company['cp_logo'] ?>"> </a>
                               </div>
                          </div>
                          <div class="col-lg-3 col-md-6">

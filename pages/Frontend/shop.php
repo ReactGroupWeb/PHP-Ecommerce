@@ -25,8 +25,8 @@
 
                $get_products = new dbClass();
 
-               $table_product = "tb_product p";
-               $table_category = "tb_category c";
+               $table_product = "tb_product as p";
+               $table_category = "tb_category as c";
                
                $field = "p.pd_id, p.cg_id, p.pd_name, p.pd_image, p.pd_regularPrice, p.pd_salePrice, p.pd_dateCreated, c.cg_name AS category_name";
                $condition = "";

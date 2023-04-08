@@ -25,39 +25,79 @@
                          <table class="cart-table">
                               <thead class="cart-table-head">
                                    <tr class="table-head-row">
-                                        <th class="product-remove"></th>
-                                        <th class="product-image">Product Image</th>
-                                        <th class="product-name">Name</th>
-                                        <th class="product-price">Price</th>
-                                        <th class="product-quantity">Quantity</th>
-                                        <th class="product-total">Total</th>
+                                        <th></th>
+                                        <th>Product Image</th>
+                                        <th>Name</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                        <th>Total</th>
                                    </tr>
                               </thead>
                               <tbody>
-                                   <tr class="table-body-row">
-                                        <td class="product-remove"> <a href="#"><i class="far fa-window-close"></i></a> </td>
-                                        <td class="product-image"><img src="../../assets/frontend/img/products/product-img-1.jpg"></td>
-                                        <td class="product-name">Strawberry</td>
-                                        <td class="product-price">$85</td>
-                                        <td class="product-quantity"><input type="number" placeholder="0"></td>
-                                        <td class="product-total">1</td>
-                                   </tr>
-                                   <tr class="table-body-row">
-                                        <td class="product-remove"> <a href="#"><i class="far fa-window-close"></i></a> </td>
-                                        <td class="product-image"><img src="../../assets/frontend/img/products/product-img-2.jpg"></td>
-                                        <td class="product-name">Berry</td>
-                                        <td class="product-price">$70</td>
-                                        <td class="product-quantity"><input type="number" placeholder="0"></td>
-                                        <td class="product-total">1</td>
-                                   </tr>
-                                   <tr class="table-body-row">
-                                        <td class="product-remove"> <a href="#"><i class="far fa-window-close"></i></a> </td>
-                                        <td class="product-image"><img src="../../assets/frontend/img/products/product-img-3.jpg"></td>
-                                        <td class="product-name">Lemon</td>
-                                        <td class="product-price">$35</td>
-                                        <td class="product-quantity"><input type="number" placeholder="0"></td>
-                                        <td class="product-total">1</td>
-                                   </tr>
+                                   <?php
+                                        $heading = "Product";
+                                        $get_cart_items = new dbClass();
+
+                                        $table_shopping_cart = "tb_shopping_cart as sc";
+                                        $table_product = "tb_product as p";
+
+                                        $field = "sc.id, sc.quantity, sc.created_at, p.pd_name, p.pd_image, p.pd_regularPrice, p.pd_salePrice";
+
+                                        $condition = "";
+                                        if(isset($_SESSION['us_id'])){
+                                             $user_id = $_SESSION['us_id'];
+                                             $condition = "sc.user_id = $user_id AND sc.instance = 'cart'";
+                                        }
+
+                                        $order = "ORDER BY sc.created_at DESC";
+
+                                        $join_condition = "p.pd_id = sc.product_id";
+                                        $table_join = $table_shopping_cart . " INNER JOIN " . $table_product . " ON " . $join_condition;
+
+                                        $cart_tiems = $get_cart_items->dbSelect($table_join, $field, $condition, $order);     
+                                        
+                                        if(!empty($cart_tiems)){
+                                             foreach($cart_tiems as $cItem){
+                                                  ?>
+                                                       <tr class="table-body-row">
+                                                            <td> <a href="#" class="text-dark"><i class="far fa-window-close"></i></a> </td>
+                                                            <td><img src="../assets/images/<?= strtolower($heading) ?>/<?= $cItem['pd_image'] ?>" width="35"></td>
+                                                            <td><?= $cItem['pd_name'] ?></td>
+                                                            <td>
+                                                                 $<?php
+                                                                      echo $cItem['pd_salePrice']  ? number_format($cItem['pd_salePrice'], 2)  : number_format($cItem['pd_regularPrice'], 2);
+                                                                 ?>
+                                                            </td>
+                                                            <td><input type="number" placeholder="<?= $cItem['quantity'] ?>"></td>
+
+                                                            <?php
+                                                                 $totalPrice = 0;
+                                                                 $price = $cItem['quantity']  * ($cItem['pd_salePrice']  ? $cItem['pd_salePrice']  : $cItem['pd_regularPrice'] );
+                                                                 $totalPrice += $price;
+                                                            ?>
+
+                                                            <td>$<?= number_format($totalPrice, 2); ?></td>
+                                                       </tr>
+                                                  
+                                                  <?php
+                                             } 
+                                        }
+                                        else{
+                                             ?>
+                                                  <tr class="text-center table-body-row">
+                                                       <td colspan="6">
+                                                            <h3>No Cart Item Have Been Added</h3>
+                                                            <a href="/shop" class="btn btn-success btn-sm text-center px-3 py-2 fw-bold"><i class="fa-solid fa-circle-arrow-left me-2"></i>Shop Now</a>
+                                                       </td>
+                                                       
+                                                  </tr>
+                                             <?php
+                                        }
+                                        
+                                   
+                                   ?>
+                                   
+                                   
                               </tbody>
                          </table>
                     </div>
@@ -73,18 +113,45 @@
                                    </tr>
                               </thead>
                               <tbody>
-                                   <tr class="total-data">
-                                        <td><strong>Subtotal: </strong></td>
-                                        <td>$500</td>
-                                   </tr>
-                                   <tr class="total-data">
-                                        <td><strong>Shipping: </strong></td>
-                                        <td>$45</td>
-                                   </tr>
-                                   <tr class="total-data">
-                                        <td><strong>Total: </strong></td>
-                                        <td>$545</td>
-                                   </tr>
+
+                                   <?php
+                                        if(!empty($cart_tiems)){
+                                             foreach($cart_tiems as $cItem){
+                                                  ?>
+                                                       <tr class="total-data">
+                                                            <td><strong>Subtotal: </strong></td>
+                                                            <td>$500</td>
+                                                       </tr>
+                                                       <tr class="total-data">
+                                                            <td><strong>Shipping: </strong></td>
+                                                            <td>$45</td>
+                                                       </tr>
+                                                       <tr class="total-data">
+                                                            <td><strong>Total: </strong></td>
+                                                            <td>$545</td>
+                                                       </tr>
+                                                  
+                                                  <?php
+                                             } 
+                                        }
+                                        else{
+                                             ?>
+                                                  <tr class="text-center table-body-row">
+                                                       <td colspan="6" class="py-5">
+                                                            <h4>No Cart Item Have Been Added</h4>
+                                                            <a href="/shop" class="btn btn-success btn-sm text-center px-3 py-2 fw-bold"><i class="fa-solid fa-circle-arrow-left me-2"></i>Shop Now</a>
+                                                       </td>
+                                                       
+                                                  </tr>
+                                             <?php
+                                        }
+                                        
+                                   
+                                   ?>
+                                   
+                                  
+
+                                   
                               </tbody>
                          </table>
                          <div class="cart-buttons">

@@ -86,12 +86,13 @@
                                                   <?= $product['pd_sku'] ?>
                                              </td>
                                              <td>
-                                                  <?php if ($product['pd_countInStock'] < 1)
-                                                       echo "Out Of Stock";
-                                                  else if ($product['pd_countInStock'] < 20)
-                                                       echo "Low In Stock";
-                                                  else
-                                                       echo "In Stock";
+                                                  <?php 
+                                                       if ($product['pd_countInStock'] < 1)
+                                                            echo "Out Of Stock";
+                                                       else if ($product['pd_countInStock'] < 20)
+                                                            echo "Low In Stock";
+                                                       else
+                                                            echo "In Stock";
                                                   ?>
                                              </td>
                                              <td>

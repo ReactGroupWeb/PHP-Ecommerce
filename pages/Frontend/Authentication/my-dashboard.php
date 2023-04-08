@@ -32,7 +32,7 @@
                               <div class="col-md-8 text-end">
                                    <div class="card-body">
                                         <h3 class="card-title text-light">Total Cost</h3>
-                                        <h4 class="card-text text-light font-weight-bold">$1035.00</h4>
+                                        <h4 class="card-text text-light fw-bold">$1035.00</h4>
                                    </div>
                               </div>
                          </div>
@@ -50,7 +50,7 @@
                               <div class="col-md-8 text-end">
                                    <div class="card-body">
                                         <h3 class="card-title text-light">Total Purchased</h3>
-                                        <h4 class="card-text text-light font-weight-bold">$1035.00</h4>
+                                        <h4 class="card-text text-light fw-bold">$1035.00</h4>
                                    </div>
                               </div>
                          </div>
@@ -68,7 +68,7 @@
                               <div class="col-md-8 text-end">
                                    <div class="card-body">
                                         <h3 class="card-title text-light">Total Delivered</h3>
-                                        <h4 class="card-text text-light font-weight-bold">100</h4>
+                                        <h4 class="card-text text-light fw-bold">100</h4>
                                    </div>
                               </div>
                          </div>
@@ -94,19 +94,19 @@
                          <div class="col-md-5 my-auto text-center">
                               <img src="../../assets/frontend/img/avaters/avatar1.png" width="75" class="rounded-circle">
                               <div class="px-3 mt-3 mb-2">
-                                   <h6 class="bg-danger font-weight-bold my-2 py-1 text-light">Ordered</h6>
+                                   <h6 class="bg-danger fw-bold my-2 py-1 text-light">Ordered</h6>
                               </div>
                               <p>
-                                   <a href="/my-dashboard/order-detail" class="btn btn-primary btn-sm text-light font-weight-bold"><i class="fas fa-eye mr-2"></i>Detail</a>
+                                   <a href="/my-dashboard/order-detail" class="btn btn-primary btn-sm text-light fw-bold"><i class="fas fa-eye me-2"></i>Detail</a>
                               </p>
                          </div>
                          <div class="col-md-7 text-right">
                               <div class="card-body">
-                                   <p class="m-0 card-title"><span class="font-weight-bold">No.</span> 1</p>
+                                   <p class="m-0 card-title"><span class="fw-bold">No.</span> 1</p>
                                    <p class="m-0 card-title">Joe Cole</p>
                                    <p class="m-0 card-text">joe.cole@gmail.com</p>
                                    <p class="m-0 card-text">+(855) 123 456 789</p>
-                                   <p class="m-0 card-text font-weight-bold">$150.00</p>
+                                   <p class="m-0 card-text fw-bold">$150.00</p>
                               </div>
                          </div>
                     </div>
@@ -118,20 +118,20 @@
                          <div class="col-md-5 my-auto text-center">
                               <img src="../../assets/frontend/img/avaters/avatar2.png" width="75" class="rounded-circle">
                               <div class="px-3 mt-3 mb-2">
-                                   <h6 class="bg-warning font-weight-bold my-2 py-1 text-dark">Delivering</h6>
+                                   <h6 class="bg-warning fw-bold my-2 py-1 text-dark">Delivering</h6>
                               </div>
                               <p>
                                    <a href="#" class="btn btn-success btn-sm text-light"><i class="fas fa-check"></i></a>
-                                   <a href="/my-dashboard/order-detail" class="btn btn-primary btn-sm text-light font-weight-bold"><i class="fas fa-eye mr-2"></i>Detail</a>
+                                   <a href="/my-dashboard/order-detail" class="btn btn-primary btn-sm text-light fw-bold"><i class="fas fa-eye me-2"></i>Detail</a>
                               </p>
                          </div>
                          <div class="col-md-7 text-right">
                               <div class="card-body">
-                                   <p class="m-0 card-title"><span class="font-weight-bold">No.</span> 2</p>
+                                   <p class="m-0 card-title"><span class="fw-bold">No.</span> 2</p>
                                    <p class="m-0 card-title">Joe Cole</p>
                                    <p class="m-0 card-text">joe.cole@gmail.com</p>
                                    <p class="m-0 card-text">+(855) 123 456 789</p>
-                                   <p class="m-0 card-text font-weight-bold">$150.00</p>
+                                   <p class="m-0 card-text fw-bold">$150.00</p>
                               </div>
                          </div>
                     </div>
@@ -143,19 +143,19 @@
                          <div class="col-md-5 my-auto text-center">
                               <img src="../../assets/frontend/img/avaters/avatar3.png" width="75" class="rounded-circle">
                               <div class="px-3 mt-3 mb-2">
-                                   <h6 class="bg-success font-weight-bold my-2 py-1 text-light">Succes</h6>
+                                   <h6 class="bg-success fw-bold my-2 py-1 text-light">Succes</h6>
                               </div>
                               <p>
-                                   <a href="/my-dashboard/order-detail" class="btn btn-primary btn-sm text-light font-weight-bold"><i class="fas fa-eye mr-2"></i>Detail</a>
+                                   <a href="/my-dashboard/order-detail" class="btn btn-primary btn-sm text-light fw-bold"><i class="fas fa-eye me-2"></i>Detail</a>
                               </p>
                          </div>
                          <div class="col-md-7 text-right">
                               <div class="card-body">
-                                   <p class="m-0 card-title"><span class="font-weight-bold">No.</span> 3</p>
+                                   <p class="m-0 card-title"><span class="fw-bold">No.</span> 3</p>
                                    <p class="m-0 card-title">Joe Cole</p>
                                    <p class="m-0 card-text">joe.cole@gmail.com</p>
                                    <p class="m-0 card-text">+(855) 123 456 789</p>
-                                   <p class="m-0 card-text font-weight-bold">$150.00</p>
+                                   <p class="m-0 card-text fw-bold">$150.00</p>
                               </div>
                          </div>
                     </div>
@@ -167,19 +167,19 @@
                          <div class="col-md-5 my-auto text-center">
                               <img src="../../assets/frontend/img/avaters/avatar2.png" width="75" class="rounded-circle">
                               <div class="px-3 mt-3 mb-2">
-                                   <h6 class="bg-success font-weight-bold my-2 py-1 text-light">Succes</h6>
+                                   <h6 class="bg-success fw-bold my-2 py-1 text-light">Succes</h6>
                               </div>
                               <p>
-                                   <a href="/my-dashboard/order-detail" class="btn btn-primary btn-sm text-light font-weight-bold"><i class="fas fa-eye mr-2"></i>Detail</a>
+                                   <a href="/my-dashboard/order-detail" class="btn btn-primary btn-sm text-light fw-bold"><i class="fas fa-eye me-2"></i>Detail</a>
                               </p>
                          </div>
                          <div class="col-md-7 text-right">
                               <div class="card-body">
-                                   <p class="m-0 card-title"><span class="font-weight-bold">No.</span> 4</p>
+                                   <p class="m-0 card-title"><span class="fw-bold">No.</span> 4</p>
                                    <p class="m-0 card-title">Joe Cole</p>
                                    <p class="m-0 card-text">joe.cole@gmail.com</p>
                                    <p class="m-0 card-text">+(855) 123 456 789</p>
-                                   <p class="m-0 card-text font-weight-bold">$150.00</p>
+                                   <p class="m-0 card-text fw-bold">$150.00</p>
                               </div>
                          </div>
                     </div>
@@ -191,19 +191,19 @@
                          <div class="col-md-5 my-auto text-center">
                               <img src="../../assets/frontend/img/avaters/avatar3.png" width="75" class="rounded-circle">
                               <div class="px-3 mt-3 mb-2">
-                                   <h6 class="bg-success font-weight-bold my-2 py-1 text-light">Succes</h6>
+                                   <h6 class="bg-success fw-bold my-2 py-1 text-light">Succes</h6>
                               </div>
                               <p>
-                                   <a href="/my-dashboard/order-detail" class="btn btn-primary btn-sm text-light font-weight-bold"><i class="fas fa-eye mr-2"></i>Detail</a>
+                                   <a href="/my-dashboard/order-detail" class="btn btn-primary btn-sm text-light fw-bold"><i class="fas fa-eye me-2"></i>Detail</a>
                               </p>
                          </div>
                          <div class="col-md-7 text-right">
                               <div class="card-body">
-                                   <p class="m-0 card-title"><span class="font-weight-bold">No.</span> 5</p>
+                                   <p class="m-0 card-title"><span class="fw-bold">No.</span> 5</p>
                                    <p class="m-0 card-title">Joe Cole</p>
                                    <p class="m-0 card-text">joe.cole@gmail.com</p>
                                    <p class="m-0 card-text">+(855) 123 456 789</p>
-                                   <p class="m-0 card-text font-weight-bold">$150.00</p>
+                                   <p class="m-0 card-text fw-bold">$150.00</p>
                               </div>
                          </div>
                     </div>
@@ -215,19 +215,19 @@
                          <div class="col-md-5 my-auto text-center">
                               <img src="../../assets/frontend/img/avaters/avatar1.png" width="75" class="rounded-circle">
                               <div class="px-3 mt-3 mb-2">
-                                   <h6 class="bg-danger font-weight-bold my-2 py-1 text-light">Ordered</h6>
+                                   <h6 class="bg-danger fw-bold my-2 py-1 text-light">Ordered</h6>
                               </div>
                               <p>
-                                   <a href="/my-dashboard/order-detail" class="btn btn-primary btn-sm text-light font-weight-bold"><i class="fas fa-eye mr-2"></i>Detail</a>
+                                   <a href="/my-dashboard/order-detail" class="btn btn-primary btn-sm text-light fw-bold"><i class="fas fa-eye me-2"></i>Detail</a>
                               </p>
                          </div>
                          <div class="col-md-7 text-right">
                               <div class="card-body">
-                                   <p class="m-0 card-title"><span class="font-weight-bold">No.</span> 6</p>
+                                   <p class="m-0 card-title"><span class="fw-bold">No.</span> 6</p>
                                    <p class="m-0 card-title">Joe Cole</p>
                                    <p class="m-0 card-text">joe.cole@gmail.com</p>
                                    <p class="m-0 card-text">+(855) 123 456 789</p>
-                                   <p class="m-0 card-text font-weight-bold">$150.00</p>
+                                   <p class="m-0 card-text fw-bold">$150.00</p>
                               </div>
                          </div>
                     </div>
@@ -239,20 +239,20 @@
                          <div class="col-md-5 my-auto text-center">
                               <img src="../../assets/frontend/img/avaters/avatar3.png" width="75" class="rounded-circle">
                               <div class="px-3 mt-3 mb-2">
-                                   <h6 class="bg-warning font-weight-bold my-2 py-1 text-dark">Delivering</h6>
+                                   <h6 class="bg-warning fw-bold my-2 py-1 text-dark">Delivering</h6>
                               </div>
                               <p>
                                    <a href="#" class="btn btn-success btn-sm text-light"><i class="fas fa-check"></i></a>
-                                   <a href="/my-dashboard/order-detail" class="btn btn-primary btn-sm text-light font-weight-bold"><i class="fas fa-eye mr-2"></i>Detail</a>
+                                   <a href="/my-dashboard/order-detail" class="btn btn-primary btn-sm text-light fw-bold"><i class="fas fa-eye me-2"></i>Detail</a>
                               </p>
                          </div>
                          <div class="col-md-7 text-right">
                               <div class="card-body">
-                                   <p class="m-0 card-title"><span class="font-weight-bold">No.</span> 7</p>
+                                   <p class="m-0 card-title"><span class="fw-bold">No.</span> 7</p>
                                    <p class="m-0 card-title">Joe Cole</p>
                                    <p class="m-0 card-text">joe.cole@gmail.com</p>
                                    <p class="m-0 card-text">+(855) 123 456 789</p>
-                                   <p class="m-0 card-text font-weight-bold">$150.00</p>
+                                   <p class="m-0 card-text fw-bold">$150.00</p>
                               </div>
                          </div>
                     </div>
@@ -264,19 +264,19 @@
                          <div class="col-md-5 my-auto text-center">
                               <img src="../../assets/frontend/img/avaters/avatar2.png" width="75" class="rounded-circle">
                               <div class="px-3 mt-3 mb-2">
-                                   <h6 class="bg-danger font-weight-bold my-2 py-1 text-light">Ordered</h6>
+                                   <h6 class="bg-danger fw-bold my-2 py-1 text-light">Ordered</h6>
                               </div>
                               <p>
-                                   <a href="/my-dashboard/order-detail" class="btn btn-primary btn-sm text-light font-weight-bold"><i class="fas fa-eye mr-2"></i>Detail</a>
+                                   <a href="/my-dashboard/order-detail" class="btn btn-primary btn-sm text-light fw-bold"><i class="fas fa-eye me-2"></i>Detail</a>
                               </p>
                          </div>
                          <div class="col-md-7 text-right">
                               <div class="card-body">
-                                   <p class="m-0 card-title"><span class="font-weight-bold">No.</span> 8</p>
+                                   <p class="m-0 card-title"><span class="fw-bold">No.</span> 8</p>
                                    <p class="m-0 card-title">Joe Cole</p>
                                    <p class="m-0 card-text">joe.cole@gmail.com</p>
                                    <p class="m-0 card-text">+(855) 123 456 789</p>
-                                   <p class="m-0 card-text font-weight-bold">$150.00</p>
+                                   <p class="m-0 card-text fw-bold">$150.00</p>
                               </div>
                          </div>
                     </div>
@@ -288,20 +288,20 @@
                          <div class="col-md-5 my-auto text-center">
                               <img src="../../assets/frontend/img/avaters/avatar1.png" width="75" class="rounded-circle">
                               <div class="px-3 mt-3 mb-2">
-                                   <h6 class="bg-warning font-weight-bold my-2 py-1 text-dark">Delivering</h6>
+                                   <h6 class="bg-warning fw-bold my-2 py-1 text-dark">Delivering</h6>
                               </div>
                               <p>
                                    <a href="#" class="btn btn-success btn-sm text-light"><i class="fas fa-check"></i></a>
-                                   <a href="/my-dashboard/order-detail" class="btn btn-primary btn-sm text-light font-weight-bold"><i class="fas fa-eye mr-2"></i>Detail</a>
+                                   <a href="/my-dashboard/order-detail" class="btn btn-primary btn-sm text-light fw-bold"><i class="fas fa-eye me-2"></i>Detail</a>
                               </p>
                          </div>
                          <div class="col-md-7 text-right">
                               <div class="card-body">
-                                   <p class="m-0 card-title"><span class="font-weight-bold">No.</span> 9</p>
+                                   <p class="m-0 card-title"><span class="fw-bold">No.</span> 9</p>
                                    <p class="m-0 card-title">Joe Cole</p>
                                    <p class="m-0 card-text">joe.cole@gmail.com</p>
                                    <p class="m-0 card-text">+(855) 123 456 789</p>
-                                   <p class="m-0 card-text font-weight-bold">$150.00</p>
+                                   <p class="m-0 card-text fw-bold">$150.00</p>
                               </div>
                          </div>
                     </div>

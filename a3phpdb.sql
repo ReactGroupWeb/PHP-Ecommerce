@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2023 at 05:25 PM
+-- Generation Time: Apr 08, 2023 at 07:16 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.5
 
@@ -155,6 +155,30 @@ INSERT INTO `tb_product` (`pd_id`, `pd_name`, `pd_description`, `pd_image`, `pd_
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tb_shopping_cart`
+--
+
+CREATE TABLE `tb_shopping_cart` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `instance` enum('cart','wishlist') NOT NULL DEFAULT 'cart',
+  `quantity` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_shopping_cart`
+--
+
+INSERT INTO `tb_shopping_cart` (`id`, `user_id`, `product_id`, `instance`, `quantity`, `created_at`) VALUES
+(1, 2, 2, 'cart', 1, '2023-04-08 03:48:54'),
+(2, 2, 5, 'cart', 1, '2023-04-08 03:49:12'),
+(3, 2, 7, 'cart', 1, '2023-04-08 04:04:16');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tb_slideshow`
 --
 
@@ -251,6 +275,12 @@ ALTER TABLE `tb_product`
   ADD KEY `cg_id` (`cg_id`(250));
 
 --
+-- Indexes for table `tb_shopping_cart`
+--
+ALTER TABLE `tb_shopping_cart`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tb_slideshow`
 --
 ALTER TABLE `tb_slideshow`
@@ -289,6 +319,12 @@ ALTER TABLE `tb_order`
 --
 ALTER TABLE `tb_orderdetail`
   MODIFY `odt_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tb_shopping_cart`
+--
+ALTER TABLE `tb_shopping_cart`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

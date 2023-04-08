@@ -7,11 +7,11 @@
 <!-- Service Section -->
 <?php require 'components/Frontend/Homepage/services.php'; ?>
 
-<!-- Hot Sale Product Section -->
-<?php require 'components/Frontend/Homepage/sales-product.php'; ?>
-
 <!-- New Arrival Product Section -->
 <?php require 'components/Frontend/Homepage/new-arrival.php'; ?>
+
+<!-- Hot Sale Product Section -->
+<?php require 'components/Frontend/Homepage/sales-product.php'; ?>
 
 <!-- Testimonial Section -->
 <?php require 'components/Frontend/testimonial.php'; ?>

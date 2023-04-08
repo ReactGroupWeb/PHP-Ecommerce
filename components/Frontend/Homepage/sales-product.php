@@ -26,6 +26,7 @@
                               ?>
                                    <div class="col-12 text-center">
                                         <div class="single-product-item">
+                                             <button class="float-start btn-badge-sale">sale</button>
                                              <div class="product-image">
                                                   <a href="/shop/product-detail?productid=<?php echo $product['pd_id']; ?>">
                                                        <img src="./assets/images/<?= strtolower($heading) ?>/<?= $product['pd_image'] ?>">

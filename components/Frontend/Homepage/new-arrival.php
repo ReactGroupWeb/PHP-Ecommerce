@@ -16,7 +16,7 @@
                     $get_products = new dbClass();
                     $table = "tb_product";
                     $field = "*";
-                    $condition = "pd_countInStock !=0";
+                    $condition = "pd_countInStock !=0 AND pd_salePrice = 0";
                     $order = "ORDER BY pd_dateCreated DESC limit 8";
 
                     $products = $get_products->dbSelect($table, $field, $condition, $order);
@@ -26,6 +26,7 @@
                               ?>
                                    <div class="col-12 text-center">
                                         <div class="single-product-item">
+                                             <button class="float-start btn-badge-new">new</button>
                                              <div class="product-image">
                                                   <a href="/shop/product-detail?productid=<?php echo $product['pd_id']; ?>">
                                                        <img src="./assets/images/<?= strtolower($heading) ?>/<?= $product['pd_image'] ?>">

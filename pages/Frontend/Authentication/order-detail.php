@@ -26,7 +26,7 @@
                                    <h3 class="text-left">Order Detail</h3>
                               </div>
                               <div class="col-6 mb-4">
-                                   <a href="/my-dashboard" class="btn btn-success btn-sm float-right py-2"><i class="fas fa-arrow-left mr-2"></i>Back</a>
+                                   <a href="/my-dashboard" class="btn btn-success btn-sm float-end py-2 fw-bold"><i class="fas fa-arrow-left me-2"></i>Back</a>
                               </div>
                               
                               <div class="col-md-4">

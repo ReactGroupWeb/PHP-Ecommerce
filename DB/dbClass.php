@@ -1,5 +1,5 @@
 <?php
-
+     require_once "dbConnection.php";
      class dbClass extends Dbh
      {
           public function dbSelect($table, $column = "*", $criteria = "", $clause = "")
@@ -19,7 +19,7 @@
                $stmt->execute();
                $result = $stmt->fetchAll();
                if (!$result) {
-                    echo "There no Data in " . substr($table, 3);
+                    // echo "There no Data in " . substr($table, 3);
                     return false;
                }
                $this->dbClose($conn);
