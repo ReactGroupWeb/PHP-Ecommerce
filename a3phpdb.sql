@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 08, 2023 at 05:46 PM
+-- Generation Time: Apr 09, 2023 at 12:31 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.5
 
@@ -87,16 +87,15 @@ CREATE TABLE `tb_order` (
   `shippingAddress` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `city` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'Phnom Penh',
   `country` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'Cambodia',
-  `status` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Ordered',
+  `status` enum('ordered','delivered','cancelled') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'ordered',
   `tax` int(11) DEFAULT NULL,
   `subTotal` float DEFAULT NULL,
   `totalPrice` float DEFAULT NULL,
   `dateOrdered` timestamp NOT NULL DEFAULT current_timestamp(),
   `dateDelivered` date DEFAULT NULL,
   `dateSuccess` date DEFAULT NULL,
-  `Tmode` char(1) COLLATE utf8mb4_unicode_ci DEFAULT '0',
-  `Tstatus` char(1) COLLATE utf8mb4_unicode_ci DEFAULT '0',
-  `TDate` date DEFAULT NULL
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -106,10 +105,12 @@ CREATE TABLE `tb_order` (
 --
 
 CREATE TABLE `tb_orderdetail` (
-  `odt_id` int(11) NOT NULL,
-  `od_id` int(11) NOT NULL,
-  `pd_id` int(11) NOT NULL,
-  `quantity` int(11) NOT NULL
+  `odt_id` bigint(20) NOT NULL,
+  `od_id` bigint(20) NOT NULL,
+  `pd_id` bigint(20) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -214,6 +215,22 @@ INSERT INTO `tb_slideshow` (`ss_id`, `ss_event`, `ss_title`, `ss_description`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tb_transaction`
+--
+
+CREATE TABLE `tb_transaction` (
+  `id` bigint(20) NOT NULL,
+  `us_id` bigint(20) NOT NULL,
+  `od_id` bigint(20) NOT NULL,
+  `tmode` enum('cash_on_delivery','paypal') NOT NULL DEFAULT 'cash_on_delivery',
+  `tstatus` enum('pending','approved') NOT NULL DEFAULT 'pending',
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tb_user`
 --
 
@@ -292,6 +309,12 @@ ALTER TABLE `tb_slideshow`
   ADD PRIMARY KEY (`ss_id`);
 
 --
+-- Indexes for table `tb_transaction`
+--
+ALTER TABLE `tb_transaction`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tb_user`
 --
 ALTER TABLE `tb_user`
@@ -323,13 +346,19 @@ ALTER TABLE `tb_order`
 -- AUTO_INCREMENT for table `tb_orderdetail`
 --
 ALTER TABLE `tb_orderdetail`
-  MODIFY `odt_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `odt_id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tb_shopping_cart`
 --
 ALTER TABLE `tb_shopping_cart`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `tb_transaction`
+--
+ALTER TABLE `tb_transaction`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

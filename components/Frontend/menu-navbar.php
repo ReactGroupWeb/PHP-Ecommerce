@@ -60,7 +60,7 @@
                                                   
                                              <?php } ?>
                                              <a class="mobile-hide search-bar-icon me-2" href="#"><i class="fas fa-search"></i></a>
-                                             <a class="user-login">
+                                             <a class="<?php echo isLogin() ? 'user-login' : ''?>">
                                                   <?php
                                                        if(isLogin()){
                                                             if(isset($_SESSION['us_id'])){
