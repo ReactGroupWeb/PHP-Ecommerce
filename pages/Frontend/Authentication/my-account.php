@@ -21,30 +21,49 @@
 <div class="container">
      <div class="row" style="margin: 150px 0px 150px 0px">
           <div class="col-12">
+
+               <?php
+                    $heading = "User";
+                    $dbClass = new dbClass();
+                    $table = "tb_user";
+                    $field = "*";
+                    $condtion = "";
+                    if(isset($_SESSION['us_id'])){
+                         $user_id = $_SESSION['us_id'];
+
+                         $condtion = "us_id = $user_id";
+                    }
+
+                    $order = "";
+
+                    $user = $dbClass->dbSelectOne($table, $field, $condtion, $order);
+               
+               ?>
+               
                <div class="card text-center" style="border: 5px solid #ccc">
                     <div class="text-center">
-                         <img src="../../assets/frontend/img/avaters/avatar3.png" class="card-img-top rounded-circle" style="width: 200px; margin-top: -100px; border: 5px solid #ccc">
+                         <img src="../../assets/images/<?= strtolower($heading) ?>/<?= $user['us_image'] ?>" class="card-img-top rounded-circle" style="width: 200px; height: 200px; margin-top: -100px; border: 5px solid #ccc">
                     </div>
 
                     <div class="card-body">
                          <div class="row">
                               <div class="col-md-6 border-bottom">
-                                   <p class="my-3">Mr. Jonh Fernandez</p>
+                                   <p class="my-3 fw-bold"><?= $user['us_name']; ?></p>
                               </div>
                               <div class="col-md-6 border-bottom">
-                                   <p class="my-3">jonh.fernandez@gmail.com</p>
+                                   <p class="my-3 fw-bold"><?= $user['us_email']; ?></p>
                               </div>
                               <div class="col-md-12 border-bottom">
-                                   <p class="my-3">+185 9655 9225 852</p>
+                                   <p class="my-3 fw-bold">+855 <?= $user['us_phone']; ?></p>
                               </div>
                               <div class="col-md-12 border-bottom">
-                                   <p class="my-3">02-Jul-1985</p>
+                                   <p class="my-3 fw-bold"><?= $user['us_DOB']; ?></p>
                               </div>
                               <div class="col-md-12 border-bottom">
-                                   <p class="my-3">Area 51</p>
+                                   <p class="my-3 fw-bold"><?= $user['us_nationality']; ?></p>
                               </div>
                               <div class="col-md-12 border-bottom">
-                                   <p class="my-3">Nevada State, United State of America</p>
+                                   <p class="my-3 fw-bold"><?= $user['us_address']; ?></p>
                               </div>
                          </div>
 

@@ -129,6 +129,27 @@
                $this->dbClose($conn);
                return $num;
           }
+
+          function dbSelectLastInsertID($table) {
+               if (empty($table)) {
+                   return false;
+               }
+
+               $sql = "SELECT MAX(od_id) FROM " . $table;
+           
+               $conn = $this->dbConn();
+
+               $stmt = $conn->prepare($sql);
+               $stmt->execute();
+               
+               $last_id = $stmt->fetchColumn();
+               $this->dbClose($conn);
+           
+               return $last_id;
+          }
+           
+           
+           
      }
 
 ?>

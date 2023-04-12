@@ -199,4 +199,24 @@
     });
 
 
+ 
+    $('.wrap-address-billing').hide();
+
+    // show the payment method visa or credit card form
+    $('#payment-method-visa').click(function() {
+        $('.wrap-address-billing').slideDown(900);
+    });
+
+    // hide the payment method visa or credit card form
+    $('#payment-method-bank').click(function() {
+        $('.wrap-address-billing').slideUp(900);
+    });
+
+    // $('#payment-method-bank, #payment-method-paypal').click(function() {
+    //     $('.wrap-address-billing').slideUp(900);
+    // });
+
+
+
+
 }(jQuery));

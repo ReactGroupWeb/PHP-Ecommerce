@@ -84,9 +84,9 @@
 
 
 
-               // redirect to rotuer /
+               // redirect to rotuer /shop
                if($add_to_cart){
-                    header("Location: /");
+                    header("Location: /shop");
                }
      
           } 
