@@ -68,7 +68,7 @@
           _("us_edname").value = name;
           _("us_edemail").value = email;
           _("us_edphone").value = phone;
-          // _("us_edDateOB").value = DateOB;
+          _("us_edDateOB").value = DateOB;
           _("us_ednationality").value = nationality;
           _("us_edaddress").innerHTML = address;
           _("edimage").setAttribute("src", "./assets/images/<?= strtolower($heading) ?>/" + img);

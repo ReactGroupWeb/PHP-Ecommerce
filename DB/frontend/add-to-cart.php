@@ -3,20 +3,18 @@
      require_once "../dbClass.php";
      $dbClass= new dbClass();
 
-     if(isset($_SESSION['us_id'])){
-          $user_id = $_SESSION['us_id'];
-     }
-
      if(isset($_POST['add-to-cart'])){
           
           if(!empty($_POST['user_id']) && !empty($_POST['product_id']) && !empty($_POST['instance']) && !empty($_POST['quantity'])){
 
+               // shopping cart properties
                $user_id = $_POST['user_id'];
                $product_id = $_POST['product_id'];
                $instance = $_POST['instance'];
                $quantity = $_POST['quantity'];
 
                
+
                // fetch the product data
                $table_product = "tb_product";
                $product_field = "pd_id, pd_countInStock";

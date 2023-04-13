@@ -6,14 +6,10 @@
 
      $dbClass= new dbClass();
 
-     if(isset($_SESSION['us_id'])){
-          $user_id = $_SESSION['us_id'];
-     }
-
      if(isset($_POST['place-order'])){
 
           // order properties
-          $us_id = $_POST['us_id'];
+          $user_id = $_POST['us_id'];
           $firstname = $_POST['firstname'];
           $lastname = $_POST['lastname'];
           $email = $_POST['email'];
@@ -28,7 +24,7 @@
 
           $table_order = "tb_order";
           $order_data = [
-               "us_id" => $us_id,
+               "us_id" => $user_id,
                "firstname" => $firstname,
                "lastname" => $lastname,
                "phone" => $phone,
@@ -42,6 +38,7 @@
           ];
 
           $place_order = $dbClass->dbInsert($table_order, $order_data);
+          
 
           // order detail properties
           $order_id = $_POST['od_id'];
@@ -82,7 +79,7 @@
                // payment by cash on delivery 
                if($paymentmode == "cash_on_delivery"){
                     $transaction_data = [
-                         "us_id" => $us_id,
+                         "us_id" => $user_id,
                          "od_id" => $order_id,
                          "tmode" => "cash_on_delivery",
                          "tstatus" => "pending"
@@ -138,7 +135,7 @@
                          
                          if($charge['status'] == 'succeeded'){
                               $transaction_data = [
-                                   "us_id" => $us_id,
+                                   "us_id" => $user_id,
                                    "od_id" => $order_id,
                                    "tmode" => "card",
                                    "tstatus" => "approved"

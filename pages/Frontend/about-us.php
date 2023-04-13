@@ -15,6 +15,24 @@
      </div>
 </div>
 <!-- end breadcrumb section -->
+<?php
+     $heading = "User";
+     $dbClass = new dbClass();
+     $table = "tb_user";
+     $field = "*";
+     $condition = "";
+     $order = "ORDER BY us_id DESC";
+
+     $teams = $dbClass->dbSelect($table, $field, $condition, $order);
+
+
+     $table = "tb_company";
+     $field = "cp_name";
+     $condition = "";
+     $order = "";
+
+     $company = $dbClass->dbSelectOne($table, $field, $condition, $order);
+?>
 
 <!-- featured section -->
 <div class="feature-bg">
@@ -22,7 +40,7 @@
           <div class="row">
                <div class="col-lg-7">
                     <div class="featured-text">
-                         <h2 class="pb-3">Why <span class="orange-text">Fruitkha</span></h2>
+                         <h2 class="pb-3">Why <span class="orange-text"><?= $company['cp_name']; ?></span></h2>
                          <div class="row">
                               <div class="col-lg-6 col-md-6 mb-4 mb-md-5">
                                    <div class="list-box d-flex">
@@ -98,18 +116,7 @@
                </div>
           </div>
           <div class="row">
-
                <?php
-                    $heading = "User";
-                    $get_teams = new dbClass();
-                    $table = "tb_user";
-                    $field = "*";
-                    $condition = "";
-                    $order = "ORDER BY us_id DESC";
-
-                    $teams = $get_teams->dbSelect($table, $field, $condition, $order);
-
-
                     foreach($teams as $team){
                          ?>
                               <div class="col-lg-3 col-md-6">

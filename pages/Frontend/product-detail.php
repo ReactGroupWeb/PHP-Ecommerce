@@ -79,7 +79,7 @@
                                                   <input type="hidden" name="product_id" value="<?php echo $product['pd_id']; ?>">
                                                   <input type="hidden" name="instance" value="cart">
                                                   <input type="number" name="quantity" value="1" class="form-control">
-                                                  <button type="submit" name="add-to-cart" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                                                  <button type="submit" name="add-to-cart" class="cart-btn <?= $product['pd_countInStock'] == 0 ? 'd-none' : '' ?>"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
                                              </form>
                                              
                                              <p><strong>SKU: </strong><?php echo $product['pd_sku']; ?></p>
