@@ -19474,3 +19474,45 @@ div.tagsinput {
   -webkit-flex-grow: 1;
   flex-grow: 1; }
 /*# sourceMappingURL=maps/style.css.map */
+
+
+
+
+/* User profile */
+.user_profile_panel{
+  width: 100%;
+  background-color: #c4cbcd;
+  border-radius: 25px;
+  overflow: hidden;
+  padding: 50px 45px;
+}
+.user_profile_img{
+  width: 250px;
+  height: 250px;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  border: 5px solid #fecacc;
+}
+.user_profile_text{
+  font-size: 16px;
+}
+.user_profile_text p{
+  width: 100%;
+  font-size: 17px;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+.user_profile_text a{
+  width: 100%;
+  float: left;
+  text-decoration: none;
+  color: #fff;
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+.user_profile_text button[type="button"]{
+  width: 100%;
+  text-transform: capitalize !important;
+}
