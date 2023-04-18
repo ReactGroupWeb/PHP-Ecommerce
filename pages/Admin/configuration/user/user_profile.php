@@ -5,7 +5,7 @@
                </div>
                <div class="user_profile_text text-center py-4">
                     <button type="button" class="btn btn-warning fw-bold px-3 py-2 mb-3" data-bs-toggle="modal" data-bs-target="#edit_profile"><i class="fa-solid fa-tools me-2"></i>Edit User Profile</button>
-                    <button type="button" class="btn btn-primary fw-bold px-3 py-2 mb-3"><i class="fa-solid fa-arrow-rotate-left me-2"></i> Change Password</i></button>  
+                    <button type="button" class="btn btn-primary fw-bold px-3 py-2 mb-3" data-bs-toggle="modal" data-bs-target="#change_password"><i class="fa-solid fa-arrow-rotate-left me-2"></i> Change Password</i></button>  
                              
                </div>
                
@@ -82,6 +82,39 @@
                     </form>
                </div>
 
+          </div>
+     </div>
+</div>
+
+
+<!-- Change Password Modal -->
+<div class="modal fade" id="change_password" tabindex="-1" role="dialog">
+     <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+               <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Change Password</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                    </button>
+               </div>
+               <div class="modal-body">
+                    <form class="form p-2">
+                         <div class="form-group">
+                              <label for="password">Current Password</label>
+                              <input type="password" name="password" class="form-control" id="password">
+                         </div>
+                         <div class="form-group">
+                              <label for="new_password">New Password</label>
+                              <input type="password" name="new_password" class="form-control" id="new_password">
+                         </div>
+                         <div class="form-group">
+                              <label for="confirm_password">Confirm New Password</label>
+                              <input type="password" name="cn_password" class="form-control" id="confirm_password">
+                         </div>
+                         <button type="submit" class="btn btn-primary float-right font-weight-bold"><i
+                                   class="fas fa-save mr-2"></i>Reset Password</button>
+                    </form>
+               </div>
           </div>
      </div>
 </div>
