@@ -34,11 +34,6 @@
           $order_id = $_GET['orderid'];
      }
 
-     // $fields = "ord.od_id, ord.firstname, ord.lastname, ord.email, ord.phone, ord.city, ord.country, ord.shippingAddress, ord.status, ord.dateOrdered, ord.dateDelivered, 
-     //            ordd.quantity,
-     //            p.pd_name, p.pd_image, p.pd_salePrice, p.pd_regularPrice,
-     //            ts.tmode, ts.tstatus, .ts.created_at
-     //           "
 
      // Order 
      $field_order = "ord.od_id, ord.firstname, ord.lastname, ord.email, ord.phone, ord.city, ord.country, ord.shippingAddress, ord.status, ord.dateOrdered, ord.dateDelivered, ord.dateSuccess";

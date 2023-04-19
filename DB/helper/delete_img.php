@@ -1,5 +1,4 @@
 <?php
-     if (file_exists($filename)){
-          unlink($filename);
-     }
+if (file_exists($filename))
+    unlink($filename);
 ?>

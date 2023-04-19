@@ -1,8 +1,10 @@
 <?php
-     $get_edCP = new dbClass();
-     $edcompany = $get_edCP->dbSelectOne($tb);
+
+$get_edCP = new dbClass();
+$edcompany = $get_edCP->dbSelectOne($tb);
 ?>
-<div class="modal fade" id="edit<?= $heading ?>" tabindex="-1" aria-labelledby="edit<?= $heading ?>Label" aria-hidden="true">
+<div class="modal fade" id="edit<?= $heading ?>" tabindex="-1" aria-labelledby="edit<?= $heading ?>Label"
+     aria-hidden="true">
      <div class="modal-dialog modal-lg">
           <div class="modal-content">
                <div class="modal-header">

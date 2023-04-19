@@ -18566,16 +18566,16 @@ div.tagsinput {
 /* === Landing screens === */
 /* Auth */
 .auth.login-bg {
-  background: url("../images/auth/Login_bg.jpg");
+  background: url("../../images/auth/Login_bg.jpg");
   background-size: cover; }
 .auth .login-half-bg {
-  background: url("../images/auth/login-bg.jpg");
+  background: url("../../images/auth/login-bg.jpg");
   background-size: cover; }
 .auth.register-half-bg {
-  background: url("../images/auth/Login_bg2.jpg");
+  background: url("../../images/auth/Login_bg2.jpg");
   background-size: cover; }
 .auth.lock-full-bg {
-  background: url("../images/auth/lockscreen-bg.jpg");
+  background: url("../../auth/lockscreen-bg.jpg");
   background-size: cover; }
 .auth .lock-profile-img {
   width: 90px;
@@ -19474,45 +19474,36 @@ div.tagsinput {
   -webkit-flex-grow: 1;
   flex-grow: 1; }
 /*# sourceMappingURL=maps/style.css.map */
+@media (max-width: 767px) {
+		.carousel-inner .carousel-item > div {
+			display: none;
+		}
+		.carousel-inner .carousel-item > div:first-child {
+			display: block;
+		}
+	}
 
+	.carousel-inner .carousel-item.active,
+	.carousel-inner .carousel-item-next,
+	.carousel-inner .carousel-item-prev {
+		display: flex;
+	}
 
+	/* medium and up screens */
+	@media (min-width: 768px) {
 
+		.carousel-inner .carousel-item-end.active,
+		.carousel-inner .carousel-item-next {
+			transform: translateX(25%);
+		}
 
-/* User profile */
-.user_profile_panel{
-  width: 100%;
-  background-color: #c4cbcd;
-  border-radius: 25px;
-  overflow: hidden;
-  padding: 50px 45px;
-}
-.user_profile_img{
-  width: 250px;
-  height: 250px;
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 50%;
-  border: 5px solid #fecacc;
-}
-.user_profile_text{
-  font-size: 16px;
-}
-.user_profile_text p{
-  width: 100%;
-  font-size: 17px;
-  text-align: justify;
-  margin-bottom: 20px;
-}
-.user_profile_text a{
-  width: 100%;
-  float: left;
-  text-decoration: none;
-  color: #fff;
-  font-size: 17px;
-  margin-bottom: 20px;
-}
-.user_profile_text button[type="button"]{
-  width: 100%;
-  text-transform: capitalize !important;
-}
+		.carousel-inner .carousel-item-start.active, 
+		.carousel-inner .carousel-item-prev {
+			transform: translateX(-25%);
+		}
+	}
+
+	.carousel-inner .carousel-item-end,
+	.carousel-inner .carousel-item-start { 
+		transform: translateX(0);
+	}

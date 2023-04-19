@@ -4,14 +4,6 @@
     
 
     $(document).ready(function($){
-        // get current url
-        var current_url = window.location.href;
-
-        // make active on menu nav bar
-        $(".main-menu a").filter(function() {
-            return this.href == current_url;
-        }).parent().addClass("current-list-item");
-
 
         // testimonial sliders
         $(".testimonial-sliders").owlCarousel({
@@ -107,7 +99,6 @@
                 }
             }
         });
-        
 
         // count down
         if($('.time-countdown').length){  
@@ -198,8 +189,7 @@
         jQuery(".loader").fadeOut(1000);
     });
 
-
- 
+    
     $('.wrap-address-billing').hide();
 
     // show the payment method visa or credit card form
@@ -215,8 +205,6 @@
     // $('#payment-method-bank, #payment-method-paypal').click(function() {
     //     $('.wrap-address-billing').slideUp(900);
     // });
-
-
 
 
 }(jQuery));

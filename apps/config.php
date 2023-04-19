@@ -1,9 +1,9 @@
 <?php
-     $maxperpage = 5;
-     define("MAXPERPAGE", $maxperpage);
+$maxperpage = 5;
+define("MAXPERPAGE", $maxperpage);
 ?>
 <script>
-     function _(obj) {
-          return document.getElementById(obj);
-     }
+    function _(obj) {
+        return document.getElementById(obj);
+    }
 </script>

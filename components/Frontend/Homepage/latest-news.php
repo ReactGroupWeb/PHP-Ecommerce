@@ -3,9 +3,10 @@
 
           <div class="row">
                <div class="col-lg-8 offset-lg-2 text-center">
-                    <div class="section-title">	
+                    <div class="section-title">
                          <h3><span class="orange-text">Our</span> News</h3>
-                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
+                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet
+                              beatae optio.</p>
                     </div>
                </div>
           </div>
@@ -14,7 +15,9 @@
                <div class="col-lg-4 col-md-6">
                     <div class="single-latest-news">
                          <a href="/news/news-detail">
-                              <div class="latest-news-bg news-bg-1" style="background-image: url(../../../assets/frontend/img/latest-news/news-bg-1.jpg)"></div>
+                              <div class="latest-news-bg news-bg-1"
+                                   style="background-image: url(../../../assets/frontend/img/latest-news/news-bg-1.jpg)">
+                              </div>
                          </a>
                          <div class="news-text-box">
                               <h3><a href="/news/news-detail">You will vainly look for fruit on it in autumn.</a></h3>
@@ -22,15 +25,19 @@
                                    <span class="author"><i class="fas fa-user"></i> Admin</span>
                                    <span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
                               </p>
-                              <p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-                              <a href="/news/news-detail" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
+                              <p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi.
+                                   Praesent vitae mattis nunc, egestas viverra eros.</p>
+                              <a href="/news/news-detail" class="read-more-btn">read more <i
+                                        class="fas fa-angle-right"></i></a>
                          </div>
                     </div>
                </div>
                <div class="col-lg-4 col-md-6">
                     <div class="single-latest-news">
                          <a href="/news/news-detail">
-                              <div class="latest-news-bg news-bg-2" style="background-image: url(../../../assets/frontend/img/latest-news/news-bg-2.jpg)"></div>
+                              <div class="latest-news-bg news-bg-2"
+                                   style="background-image: url(../../../assets/frontend/img/latest-news/news-bg-2.jpg)">
+                              </div>
                          </a>
                          <div class="news-text-box">
                               <h3><a href="/news/news-detail">A man's worth has its season, like tomato.</a></h3>
@@ -38,15 +45,19 @@
                                    <span class="author"><i class="fas fa-user"></i> Admin</span>
                                    <span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
                               </p>
-                              <p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-                              <a href="/news/news-detail" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
+                              <p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi.
+                                   Praesent vitae mattis nunc, egestas viverra eros.</p>
+                              <a href="/news/news-detail" class="read-more-btn">read more <i
+                                        class="fas fa-angle-right"></i></a>
                          </div>
                     </div>
                </div>
                <div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
                     <div class="single-latest-news">
                          <a href="/news/news-detail">
-                              <div class="latest-news-bg news-bg-3" style="background-image: url(../../../assets/frontend/img/latest-news/news-bg-3.jpg)"></div>
+                              <div class="latest-news-bg news-bg-3"
+                                   style="background-image: url(../../../assets/frontend/img/latest-news/news-bg-3.jpg)">
+                              </div>
                          </a>
                          <div class="news-text-box">
                               <h3><a href="/news/news-detail">Good thoughts bear good fresh juicy fruit.</a></h3>
@@ -54,8 +65,10 @@
                                    <span class="author"><i class="fas fa-user"></i> Admin</span>
                                    <span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
                               </p>
-                              <p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-                              <a href="/news/news-detail" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
+                              <p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi.
+                                   Praesent vitae mattis nunc, egestas viverra eros.</p>
+                              <a href="/news/news-detail" class="read-more-btn">read more <i
+                                        class="fas fa-angle-right"></i></a>
                          </div>
                     </div>
                </div>

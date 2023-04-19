@@ -1,21 +1,18 @@
 <?php
-     include "./DB/dbConnection.php";
-     include "./DB/dbClass.php";
-     include "./apps/config.php";
+include "./DB/dbConnection.php";
+include "./DB/dbClass.php";
 
-     $heading = "User";
-     $tb = "tb_user";
-
-     //get total count of users
-     $pd = new dbClass();
-
-     $numpage = ceil($pd->dbCount($tb) / MAXPERPAGE);
-     $pg = 1;
-     $offset = 0;
-     if (isset($_GET['pg'])) {
-          $pg = $_GET['pg'];
-          $offset = ($pg - 1) * MAXPERPAGE;
-     }
+$heading = "User";
+$tb = "tb_user";
+//get total count of users
+$us = new dbClass();
+$numpage = ceil($us->dbCount($tb) / MAXPERPAGE);
+$pg = 1;
+$offset = 0;
+if (isset($_GET['pg'])) {
+     $pg = $_GET['pg'];
+     $offset = ($pg - 1) * MAXPERPAGE;
+}
 
 ?>
 
@@ -70,8 +67,8 @@
                          </thead>
                          <tbody>
                               <?php
-                              $getPD = new dbClass();
-                              $users = $getPD->dbSelect($tb, "*", "", "order by us_name asc limit " . MAXPERPAGE . " offset $offset");
+                              $getUS = new dbClass();
+                              $users = $getUS->dbSelect($tb, "*", "", "order by us_id asc limit " . MAXPERPAGE . " offset $offset");
                               if ($users) {
                                    $i = 1;
                                    foreach ($users as $user) {
@@ -85,10 +82,18 @@
                                                        style="background-image: url('./assets/images/<?= strtolower($heading) ?>/<?= $user['us_image'] ?>')">
                                                   </div>
                                              </td>
-                                             <td> <?= $user['us_name'] ?> </td>
-                                             <td> <?= $user['us_email'] ?> </td>
-                                             <td> <?= $user['us_phone'] ?> </td>
-                                             <td> <?= $user['us_isAdmin'] == "1" ? "Admin" : "User" ?> </td>
+                                             <td>
+                                                  <?= $user['us_name'] ?>
+                                             </td>
+                                             <td>
+                                                  <?= $user['us_email'] ?>
+                                             </td>
+                                             <td>
+                                                  <?= $user['us_phone'] ?>
+                                             </td>
+                                             <td>
+                                                  <?= $user['us_isAdmin'] == "1" ? "Admin" : "User" ?>
+                                             </td>
                                              <td>
                                                   <a class="btn btn-warning btn-sm mx-1 py-2" data-bs-toggle="modal"
                                                        data-bs-target="#edit<?= $heading ?>" onclick="loadDataForEdit('<?= $user['us_id'] ?>',

@@ -16,22 +16,22 @@
 </div>
 <!-- end breadcrumb section -->
 <?php
-     $heading = "User";
-     $dbClass = new dbClass();
-     $table = "tb_user";
-     $field = "*";
-     $condition = "";
-     $order = "ORDER BY us_id DESC";
+$heading = "User";
+$dbClass = new dbClass();
+$table = "tb_user";
+$field = "*";
+$condition = "us_isAdmin = 1";
+$order = "ORDER BY us_id DESC";
 
-     $teams = $dbClass->dbSelect($table, $field, $condition, $order);
+$teams = $dbClass->dbSelect($table, $field, $condition, $order);
 
 
-     $table = "tb_company";
-     $field = "cp_name";
-     $condition = "";
-     $order = "";
+$table = "tb_company";
+$field = "cp_name";
+$condition = "";
+$order = "";
 
-     $company = $dbClass->dbSelectOne($table, $field, $condition, $order);
+$company = $dbClass->dbSelectOne($table, $field, $condition, $order);
 ?>
 
 <!-- featured section -->
@@ -40,7 +40,9 @@
           <div class="row">
                <div class="col-lg-7">
                     <div class="featured-text">
-                         <h2 class="pb-3">Why <span class="orange-text"><?= $company['cp_name']; ?></span></h2>
+                         <h2 class="pb-3">Why <span class="orange-text">
+                                   <?= $company['cp_name']; ?>
+                              </span></h2>
                          <div class="row">
                               <div class="col-lg-6 col-md-6 mb-4 mb-md-5">
                                    <div class="list-box d-flex">
@@ -49,7 +51,8 @@
                                         </div>
                                         <div class="content">
                                              <h3>Home Delivery</h3>
-                                             <p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+                                             <p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam,
+                                                  eaque ipsa quae ab illo.</p>
                                         </div>
                                    </div>
                               </div>
@@ -60,7 +63,8 @@
                                         </div>
                                         <div class="content">
                                              <h3>Best Price</h3>
-                                             <p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+                                             <p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam,
+                                                  eaque ipsa quae ab illo.</p>
                                         </div>
                                    </div>
                               </div>
@@ -71,7 +75,8 @@
                                         </div>
                                         <div class="content">
                                              <h3>Custom Box</h3>
-                                             <p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+                                             <p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam,
+                                                  eaque ipsa quae ab illo.</p>
                                         </div>
                                    </div>
                               </div>
@@ -82,7 +87,8 @@
                                         </div>
                                         <div class="content">
                                              <h3>Quick Refund</h3>
-                                             <p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+                                             <p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam,
+                                                  eaque ipsa quae ab illo.</p>
                                         </div>
                                    </div>
                               </div>
@@ -111,40 +117,42 @@
                <div class="col-lg-8 offset-lg-2 text-center">
                     <div class="section-title">
                          <h3>Our <span class="orange-text">Team</span></h3>
-                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
+                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet
+                              beatae optio.</p>
                     </div>
                </div>
           </div>
           <div class="row">
                <?php
-                    foreach($teams as $team){
-                         ?>
-                              <div class="col-lg-3 col-md-6">
-                                   <div class="single-team-item">
-                                        <div class="team-bg team-bg-1" style="background-image: url(../assets/images/<?= strtolower($heading) ?>/<?= $team['us_image'] ?>)"></div>
-                                        <h4>
-                                             <?= $team['us_name'] ?> 
-                                             <span>
-                                                  <?php
-                                                       if($team['us_isAdmin'] == 1){
-                                                            echo "Admin";
-                                                       }
-                                                       else{
-                                                            echo "User";
-                                                       }
-                                                  ?>
-                                             </span>
-                                        </h4>
-                                        <ul class="social-link-team">
-                                             <li><a href="/"><i class="fab fa-facebook-f"></i></a></li>
-                                             <li><a href="/"><i class="fab fa-twitter"></i></a></li>
-                                             <li><a href="/"><i class="fab fa-instagram"></i></a></li>
-                                        </ul>
-                                   </div>
+               foreach ($teams as $team) {
+                    ?>
+                    <div class="col-lg-3 col-md-6">
+                         <div class="single-team-item">
+                              <div class="team-bg team-bg-1"
+                                   style="background-image: url(../assets/images/<?= strtolower($heading) ?>/<?= $team['us_image'] ?>)">
                               </div>
-                         
-                         <?php
-                    }
+                              <h4>
+                                   <?= $team['us_name'] ?>
+                                   <span>
+                                        <?php
+                                        if ($team['us_isAdmin'] == 1) {
+                                             echo "Admin";
+                                        } else {
+                                             echo "User";
+                                        }
+                                        ?>
+                                   </span>
+                              </h4>
+                              <ul class="social-link-team">
+                                   <li><a href="/"><i class="mt-2 fab fa-facebook-f"></i></a></li>
+                                   <li><a href="/"><i class="mt-2 fab fa-twitter"></i></a></li>
+                                   <li><a href="/"><i class="mt-2 fab fa-instagram"></i></a></li>
+                              </ul>
+                         </div>
+                    </div>
+
+                    <?php
+               }
                ?>
           </div>
      </div>

@@ -1,18 +1,18 @@
 <?php
-     include "./DB/dbConnection.php";
-     include "./DB/dbClass.php";
-     include "./apps/config.php";
-     $heading = "Category";
+include "./DB/dbConnection.php";
+include "./DB/dbClass.php";
 
-     $tb = "tb_category";
-     $cg = new dbClass();
-     $numpage = ceil($cg->dbCount($tb) / MAXPERPAGE);
-     $pg = 1;
-     $offset = 0;
-     if (isset($_GET['pg'])) {
-          $pg = $_GET['pg'];
-          $offset = ($pg - 1) * MAXPERPAGE;
-     }
+$heading = "Category";
+
+$tb = "tb_category";
+$cg = new dbClass();
+$numpage = ceil($cg->dbCount($tb) / MAXPERPAGE);
+$pg = 1;
+$offset = 0;
+if (isset($_GET['pg'])) {
+     $pg = $_GET['pg'];
+     $offset = ($pg - 1) * MAXPERPAGE;
+}
 ?>
 
 <div class="col-lg-12 grid-margin stretch-card">

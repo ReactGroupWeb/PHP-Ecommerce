@@ -1,19 +1,18 @@
 <?php
-     include "./DB/dbConnection.php";
-     include "./DB/dbClass.php";
-     $heading = "Slideshow";
-     include "./apps/config.php";
+include "./DB/dbConnection.php";
+include "./DB/dbClass.php";
+$heading = "Slideshow";
 
-     $tb = "tb_slideshow";
-     $ss = new dbClass();
-     $numpage = ceil($ss->dbCount($tb) / MAXPERPAGE);
-     $pg = 1;
-     $offset = 0;
 
-     if (isset($_GET['pg'])) {
-          $pg = $_GET['pg'];
-          $offset = ($pg - 1) * MAXPERPAGE;
-     }
+$tb = "tb_slideshow";
+$ss = new dbClass();
+$numpage = ceil($ss->dbCount($tb) / MAXPERPAGE);
+$pg = 1;
+$offset = 0;
+if (isset($_GET['pg'])) {
+     $pg = $_GET['pg'];
+     $offset = ($pg - 1) * MAXPERPAGE;
+}
 ?>
 <div class="col-lg-12 grid-margin stretch-card">
      <div class="card">
@@ -58,7 +57,6 @@
                               <?php
                               $getSS = new dbClass();
                               $slideshows = $getSS->dbSelect($tb, "*", "", "order by ss_order asc limit " . MAXPERPAGE . " offset $offset");
-
                               if ($slideshows) {
                                    $i = 1;
                                    foreach ($slideshows as $slideshow) {
@@ -84,8 +82,9 @@
                                                   <?= $slideshow['ss_order'] ?>
                                              </td>
                                              <td>
-                                                  <a href="./DB/slideshow.process.php?send=eye&ss_enable=<?= $slideshow['ss_enable'] ?>&ss_id=<?= $slideshow['ss_id'] ?>&pg=<?= $pg ?>" class="btn btn-success btn-sm mx-1 p-2"> 
-                                                       <i class="m-0 fas fa-eye<?= $slideshow['ss_enable'] == "1" ? "" : "-slash" ?>"></i>
+                                                  <a href="./DB/slideshow.process.php?send=eye&ss_enable=<?= $slideshow['ss_enable'] ?>&ss_id=<?= $slideshow['ss_id'] ?>&pg=<?= $pg ?>"
+                                                       class="btn btn-success btn-sm mx-1 p-2"> <i
+                                                            class="m-0 fas fa-eye<?= $slideshow['ss_enable'] == "1" ? "" : "-slash" ?>"></i>
                                                   </a>
                                                   <a class="btn btn-warning btn-sm mx-1 py-2" data-bs-toggle="modal"
                                                        data-bs-target="#editSlideshow"

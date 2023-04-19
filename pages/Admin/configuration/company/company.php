@@ -1,19 +1,15 @@
 <?php
-     include "./DB/dbConnection.php";
-     include "./DB/dbClass.php";
-     include "./apps/config.php";
+include "./DB/dbConnection.php";
+include "./DB/dbClass.php";
 
-     $heading = "Company";
-     $tb = "tb_company";
-
-     //get category data
-     $getCP = new dbClass();
-
-     $company = $getCP->dbSelectOne($tb);
+$heading = "Company";
+$tb = "tb_company";
+//get category data
+$getCP = new dbClass();
+$company = $getCP->dbSelectOne($tb);
 ?>
 
 <?php if (isset($_GET['status']) && $_GET['status'] === 'update_failed') { ?>
-
      <div class="alert alert-danger alert-dismissible fade show" role="alert">
           <strong>Update
                <?= $heading ?> Failed !!!
@@ -107,7 +103,7 @@
 
 <script>
      function preview(e) {
-          var img = document.getElementById("img");
+          var img = _("img");
           img.src = URL.createObjectURL(e.target.files[0]);
      }
 </script>
