@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 19, 2023 at 12:16 PM
+-- Generation Time: Apr 30, 2023 at 12:44 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.5
 
@@ -69,7 +69,7 @@ CREATE TABLE `tb_company` (
 --
 
 INSERT INTO `tb_company` (`cp_id`, `cp_name`, `cp_email`, `cp_phone`, `cp_telegram`, `cp_facebook`, `cp_twitter`, `cp_instagram`, `cp_address`, `cp_logo`, `cp_miniLogo`) VALUES
-(1, 'Fresh Fruit Store', 'freshfruitstore@gmail.com', '+855 23 999 9999', 't.me/freshfruitstore', 'www.facebook.com/freshfruitstore', 'www.twitter.com/freshfruitstore', 'www.instagram.com/freshfruitstore', 'Street 143\r\nCity Sangkat Boeng Keng Kang Ti Bei\r\nStatePhnom Penh\r\nLatitude11.5470792\r\nZipcode120104\r\nLongitude104.9159494\r\nCounty Cambodia', '2023-03-28_05-38-36am_2023-03-16_02-29-11pm_hamster loading cooler.gif', '2023-03-28_05-38-36am_2023-03-16_02-29-26pm_preloader.gif');
+(1, 'Fresh Fruit Store', 'freshfruitstore@gmail.com', '+855 23 999 9999', 't.me/freshfruitstore', 'www.facebook.com/freshfruitstore', 'www.twitter.com/freshfruitstore', 'www.instagram.com/freshfruitstore', 'Street 143\r\nCity Sangkat Boeng Keng Kang Ti Bei\r\nStatePhnom Penh\r\nLatitude11.5470792\r\nZipcode120104\r\nLongitude104.9159494\r\nCounty Cambodia', '2023-04-30_12-37-11pm_mini_logo_for_menu_bar.png', '2023-04-30_12-37-11pm_mini_logo_for_footer.png');
 
 -- --------------------------------------------------------
 
@@ -103,15 +103,16 @@ CREATE TABLE `tb_order` (
 --
 
 INSERT INTO `tb_order` (`od_id`, `us_id`, `firstname`, `lastname`, `phone`, `email`, `shippingAddress`, `city`, `country`, `status`, `tax`, `subTotal`, `totalPrice`, `dateOrdered`, `dateDelivered`, `dateSuccess`, `created_at`, `updated_at`) VALUES
-(1, 4, 'Vanneth', 'You', '012 456 7893', 'you.vanneth@gmail.com', 'H2100, St3200, Sangkat Metaverse, Khan Facebook, Phnom Penh, Cambodia', 'Phnom Penh', 'Cambodia', 'delivered', 19, 186, 204.6, '2023-04-12 02:22:34', NULL, '2023-04-13 15:53:06', '2023-04-12 02:22:34', '2023-04-12 02:22:34'),
-(2, 4, 'Sreypich ', 'San', '010 523 7465', 'san.sreypich@gmail.com', 'H2222, St3333, Sangkat Boeung Kok II, Khan Toul Kork, Phnom Penh, Cambodia', 'Phnom Penh', 'Cambodia', 'delivered', 8, 82.6, 90.86, '2023-04-12 02:26:36', NULL, '2023-04-13 15:52:07', '2023-04-12 02:26:36', '2023-04-12 02:26:36'),
-(3, 4, 'Vanneth', 'You', '010 523 7465', 'you.vanneth@gmail.com', 'H2222, St3333, Sangkat Boeung Kok II, Khan Toul Kork, Phnom Penh, Cambodia', 'Phnom Penh', 'Cambodia', 'ordered', 7, 73, 80.3, '2023-04-13 08:13:56', NULL, NULL, '2023-04-13 08:13:56', '2023-04-13 08:13:56'),
-(4, 4, 'Udom ', 'Nget', '0123659485', 'nget.udom@gmail.com', 'H111, St 222, Sangkat Boeung Kak II, Khan Toul Kork, Phnom Penh, Cambodia', 'Phnom Penh', 'Cambodia', 'delivering', 35, 353.8, 389.18, '2023-04-13 09:40:06', NULL, NULL, '2023-04-13 09:40:06', '2023-04-13 09:40:06'),
-(5, 4, 'Sreypich', 'San', '0125469352', 'san.sreypich@gmail.com', 'H111, St 222, Sangkat Boeung Kak II, Khan Toul Kork, Phnom Penh, Cambodia', 'Phnom Penh', 'Cambodia', 'delivering', 9, 89.5, 98.45, '2023-04-13 09:41:05', NULL, NULL, '2023-04-13 09:41:05', '2023-04-13 09:41:05'),
-(6, 4, 'Sopanharith', 'Ren', '012 365 9485', 'ren.sopanharith@gmail.com', 'H111, St 222, Sangkat Boeung Kak II, Khan Toul Kork, Phnom Penh, Cambodia', 'Phnom Penh', 'Cambodia', 'ordered', 105, 1046, 1150.6, '2023-04-13 09:57:31', NULL, NULL, '2023-04-13 09:57:31', '2023-04-13 09:57:31'),
-(7, 4, 'Sreypich', 'San', '012 546 9352', 'san.sreypich@gmail.com', 'H111, St 222, Sangkat Boeung Kak II, Khan Toul Kork, Phnom Penh, Cambodia', 'Phnom Penh', 'Cambodia', 'ordered', 90, 900, 990, '2023-04-13 10:00:03', NULL, NULL, '2023-04-13 10:00:03', '2023-04-13 10:00:03'),
-(8, 2, 'Putheara', 'Koeun', '0962862940', 'putheara768@gmail.com', 'H111, St 222, Sangkat Boeung Kak II, Khan Toul Kork, Phnom Penh, Cambodia', 'Phnom Penh', 'Cambodia', 'ordered', 7, 67, 73.7, '2023-04-18 13:36:09', NULL, NULL, '2023-04-18 13:36:09', '2023-04-18 13:36:09'),
-(9, 2, 'putheara', 'koeun', '0962862940', 'putheara768@gmail.com', 'H111, St 222, Sangkat Boeung Kak II, Khan Toul Kork, Phnom Penh, Cambodia', 'Phnom Penh', 'Cambodia', 'ordered', 2, 18, 19.8, '2023-04-19 10:09:20', '0000-00-00 00:00:00', NULL, '2023-04-19 10:09:20', '2023-04-19 10:09:20');
+(1, 4, 'Vanneth', 'You', '012 456 7893', 'you.vanneth@gmail.com', 'H2100, St3200, Sangkat Metaverse, Khan Facebook, Phnom Penh, Cambodia', 'Phnom Penh', 'Cambodia', 'delivered', 19, 186, 204.6, '2023-04-12 02:22:34', '2023-04-20 06:59:44', '2023-04-20 11:59:58', '2023-04-12 02:22:34', '2023-04-12 02:22:34'),
+(2, 4, 'Sreypich ', 'San', '010 523 7465', 'san.sreypich@gmail.com', 'H2222, St3333, Sangkat Boeung Kok II, Khan Toul Kork, Phnom Penh, Cambodia', 'Phnom Penh', 'Cambodia', 'delivered', 8, 82.6, 90.86, '2023-04-12 02:26:36', '2023-04-20 06:59:44', '2023-04-20 11:59:52', '2023-04-12 02:26:36', '2023-04-12 02:26:36'),
+(3, 4, 'Vanneth', 'You', '010 523 7465', 'you.vanneth@gmail.com', 'H2222, St3333, Sangkat Boeung Kok II, Khan Toul Kork, Phnom Penh, Cambodia', 'Phnom Penh', 'Cambodia', 'delivered', 7, 73, 80.3, '2023-04-13 08:13:56', '2023-04-20 07:00:10', '2023-04-20 12:05:09', '2023-04-13 08:13:56', '2023-04-13 08:13:56'),
+(4, 4, 'Udom ', 'Nget', '0123659485', 'nget.udom@gmail.com', 'H111, St 222, Sangkat Boeung Kak II, Khan Toul Kork, Phnom Penh, Cambodia', 'Phnom Penh', 'Cambodia', 'delivered', 35, 353.8, 389.18, '2023-04-13 09:40:06', '2023-04-20 07:05:17', '2023-04-20 12:05:23', '2023-04-13 09:40:06', '2023-04-13 09:40:06'),
+(5, 4, 'Sreypich', 'San', '0125469352', 'san.sreypich@gmail.com', 'H111, St 222, Sangkat Boeung Kak II, Khan Toul Kork, Phnom Penh, Cambodia', 'Phnom Penh', 'Cambodia', 'delivered', 9, 89.5, 98.45, '2023-04-13 09:41:05', '2023-04-20 06:59:43', '2023-04-20 11:59:54', '2023-04-13 09:41:05', '2023-04-13 09:41:05'),
+(6, 4, 'Sopanharith', 'Ren', '012 365 9485', 'ren.sopanharith@gmail.com', 'H111, St 222, Sangkat Boeung Kak II, Khan Toul Kork, Phnom Penh, Cambodia', 'Phnom Penh', 'Cambodia', 'delivered', 105, 1046, 1150.6, '2023-04-13 09:57:31', '2023-04-20 07:00:04', '2023-04-20 12:05:25', '2023-04-13 09:57:31', '2023-04-13 09:57:31'),
+(7, 4, 'Sreypich', 'San', '012 546 9352', 'san.sreypich@gmail.com', 'H111, St 222, Sangkat Boeung Kak II, Khan Toul Kork, Phnom Penh, Cambodia', 'Phnom Penh', 'Cambodia', 'delivered', 90, 900, 990, '2023-04-13 10:00:03', '2023-04-20 06:58:18', '2023-04-20 11:59:17', '2023-04-13 10:00:03', '2023-04-13 10:00:03'),
+(8, 2, 'Putheara', 'Koeun', '0962862940', 'putheara768@gmail.com', 'H111, St 222, Sangkat Boeung Kak II, Khan Toul Kork, Phnom Penh, Cambodia', 'Phnom Penh', 'Cambodia', 'delivered', 7, 67, 73.7, '2023-04-18 13:36:09', '2023-04-20 06:59:40', '2023-04-20 12:05:55', '2023-04-18 13:36:09', '2023-04-18 13:36:09'),
+(9, 2, 'putheara', 'koeun', '0962862940', 'putheara768@gmail.com', 'H111, St 222, Sangkat Boeung Kak II, Khan Toul Kork, Phnom Penh, Cambodia', 'Phnom Penh', 'Cambodia', 'delivered', 2, 18, 19.8, '2023-04-19 10:09:20', '2023-04-20 06:59:40', '2023-04-20 12:05:58', '2023-04-19 10:09:20', '2023-04-19 10:09:20'),
+(10, 2, 'putheara', 'koeun', '0962862940', 'putheara768@gmail.com', 'H111, St 222, Sangkat Boeung Kak II, Khan Toul Kork, Phnom Penh, Cambodia', 'Phnom Penh', 'Cambodia', 'delivered', 98, 984, 1082.4, '2023-04-30 10:31:05', '2023-04-30 12:31:48', '2023-04-30 17:31:54', '2023-04-30 10:31:05', '2023-04-30 10:31:05');
 
 -- --------------------------------------------------------
 
@@ -154,7 +155,9 @@ INSERT INTO `tb_orderdetail` (`odt_id`, `od_id`, `pd_id`, `quantity`, `created_a
 (19, 7, 9, 25, '2023-04-13 10:00:03', '2023-04-13 10:00:03'),
 (20, 8, 7, 1, '2023-04-18 13:36:09', '2023-04-18 13:36:09'),
 (21, 8, 5, 1, '2023-04-18 13:36:09', '2023-04-18 13:36:09'),
-(22, 9, 13, 1, '2023-04-19 10:09:20', '2023-04-19 10:09:20');
+(22, 9, 13, 1, '2023-04-19 10:09:20', '2023-04-19 10:09:20'),
+(23, 10, 14, 1, '2023-04-30 10:31:05', '2023-04-30 10:31:05'),
+(24, 10, 15, 25, '2023-04-30 10:31:05', '2023-04-30 10:31:05');
 
 -- --------------------------------------------------------
 
@@ -193,8 +196,8 @@ INSERT INTO `tb_product` (`pd_id`, `pd_name`, `pd_description`, `pd_image`, `pd_
 (11, 'Lychee', 'Lychee Fruit', '2023-03-27_04-30-14pm_fruit32.png', 38, 0, 'FF-0011', '3', 41, '2023-03-27 14:30:14'),
 (12, 'Pineapple', 'Pineapple Fruit', '2023-03-27_04-46-37pm_fruit15.png', 25, 23, 'FF-0012', '4', 143, '2023-03-27 14:46:39'),
 (13, 'Rambutan', 'Rambutan Fruit', '2023-03-27_04-52-40pm_fruit33.png', 20, 18, 'FF-0013', '3', 54, '2023-03-27 14:52:42'),
-(14, 'Blackberry', 'Blackberry', '2023-03-27_05-05-09pm_fruit30.png', 35, 34, 'FF-0014', '3', 23, '2023-03-27 15:05:11'),
-(15, 'Raspberry', 'Raspberry ', '2023-03-27_05-06-45pm_fruit18.png', 38, 0, 'FF-0015', '3', 22, '2023-03-27 15:06:45');
+(14, 'Blackberry', 'Blackberry', '2023-03-27_05-05-09pm_fruit30.png', 35, 34, 'FF-0014', '3', 22, '2023-03-27 15:05:11'),
+(15, 'Raspberry', 'Raspberry ', '2023-03-27_05-06-45pm_fruit18.png', 38, 0, 'FF-0015', '3', -3, '2023-03-27 15:06:45');
 
 -- --------------------------------------------------------
 
@@ -270,7 +273,8 @@ INSERT INTO `tb_transaction` (`id`, `us_id`, `od_id`, `tmode`, `tstatus`, `creat
 (6, 4, 6, 'card', 'approved', '2023-04-13 09:57:34', '2023-04-13 09:57:34'),
 (7, 4, 7, 'card', 'approved', '2023-04-13 10:00:05', '2023-04-13 10:00:05'),
 (8, 2, 8, 'card', 'approved', '2023-04-18 13:36:12', '2023-04-18 13:36:12'),
-(9, 2, 9, 'cash_on_delivery', 'pending', '2023-04-19 10:09:20', '2023-04-19 10:09:20');
+(9, 2, 9, 'cash_on_delivery', 'pending', '2023-04-19 10:09:20', '2023-04-19 10:09:20'),
+(10, 2, 10, 'cash_on_delivery', 'pending', '2023-04-30 10:31:05', '2023-04-30 10:31:05');
 
 -- --------------------------------------------------------
 
@@ -372,7 +376,7 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT for table `tb_category`
 --
 ALTER TABLE `tb_category`
-  MODIFY `cg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `cg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tb_company`
@@ -384,25 +388,25 @@ ALTER TABLE `tb_company`
 -- AUTO_INCREMENT for table `tb_order`
 --
 ALTER TABLE `tb_order`
-  MODIFY `od_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `od_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tb_orderdetail`
 --
 ALTER TABLE `tb_orderdetail`
-  MODIFY `odt_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `odt_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `tb_shopping_cart`
 --
 ALTER TABLE `tb_shopping_cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tb_transaction`
 --
 ALTER TABLE `tb_transaction`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

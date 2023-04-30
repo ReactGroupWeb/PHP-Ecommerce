@@ -14,6 +14,7 @@ $routes = [
     '/my-dashboard' => 'pages/Frontend/Authentication/my-dashboard.php',
     '/my-account' => 'pages/Frontend/Authentication/my-account.php',
     '/my-dashboard/order-detail' => 'pages/Frontend/Authentication/order-detail.php',
+    '/thank-you' => 'pages/Frontend/Authentication/thank-you.php',
 
     '/admin_dashboard' => 'pages/Admin/dashboard.php',
     '/admin_slideshow' => 'pages/Admin/slideshow/slideshow.php',

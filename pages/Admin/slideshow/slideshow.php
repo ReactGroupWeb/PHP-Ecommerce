@@ -1,17 +1,17 @@
 <?php
-include "./DB/dbConnection.php";
-include "./DB/dbClass.php";
-$heading = "Slideshow";
+     include "./DB/dbConnection.php";
+     include "./DB/dbClass.php";
+     $heading = "Slideshow";
 
 
-$tb = "tb_slideshow";
-$ss = new dbClass();
-$numpage = ceil($ss->dbCount($tb) / MAXPERPAGE);
-$pg = 1;
-$offset = 0;
-if (isset($_GET['pg'])) {
-     $pg = $_GET['pg'];
-     $offset = ($pg - 1) * MAXPERPAGE;
+     $tb = "tb_slideshow";
+     $ss = new dbClass();
+     $numpage = ceil($ss->dbCount($tb) / MAXPERPAGE);
+     $pg = 1;
+     $offset = 0;
+     if (isset($_GET['pg'])) {
+          $pg = $_GET['pg'];
+          $offset = ($pg - 1) * MAXPERPAGE;
 }
 ?>
 <div class="col-lg-12 grid-margin stretch-card">

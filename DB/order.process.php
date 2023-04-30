@@ -13,8 +13,8 @@ if ($_GET['send'] === 'del') {
 } else if ($_GET['send'] == 'update') {
   $id = $_GET['od_id'];
   $pg = $_GET['pg'];
-  $status = $_GET['status'] == "Ordered" ? "Delivery" : "Ordered";
-  $date = $status == "Delivery" ? date('Y-m-d H:i:s') : null;
+  $status = $_GET['status'] == "ordered" ? "delivering" : "ordered";
+  $date = $status == "delivering" ? date('Y-m-d H:i:s') : null;
   $data = [
     'status' => $status,
     'dateDelivered' => $date,

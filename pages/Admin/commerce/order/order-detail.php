@@ -8,6 +8,7 @@ $getOD = new dbClass();
 $order = $getOD->dbSelectOne($tb, "*", "od_id=" . $_GET['od_id']);
 $getOD_Product = new dbClass();
 $orderProducts = $getOD_Product->dbSelect("tb_orderdetail", "*", "od_id=" . $_GET['od_id']);
+$transaction = $getOD_Product->dbSelectOne("tb_transaction", "*", "od_id=" . $_GET['od_id'])
 ?>
 
 <div class="col-lg-12 grid-margin stretch-card">
@@ -46,20 +47,31 @@ $orderProducts = $getOD_Product->dbSelect("tb_orderdetail", "*", "od_id=" . $_GE
                                                                  <?= $heading; ?> Date
                                                             </th>
                                                             <td>
-                                                                 <?= $order['dateOrdered'] ?>
+                                                                 <?= date_format(DateTime::createFromFormat('Y-m-d H:i:s', $order['dateOrdered']),"D d F Y | g:i A");?>
                                                             </td>
                                                        </tr>
                                                        <tr>
                                                             <th>Status</th>
                                                             <td>
-                                                                 <?= $order['status'] ?>
+                                                                 <?php
+                                                                      if($order['status'] == 'ordered'){
+                                                                           echo "Ordered";
+                                                                      }
+                                                                      else if($order['status'] == 'delivering'){
+                                                                           echo "Delivering";
+                                                                      }
+                                                                      else if($order['status'] == 'delivered'){
+                                                                           echo "Delivered";
+                                                                      }
+                                                                 ?>
                                                             </td>
                                                        </tr>
                                                        <tr>
                                                             <th>Delivered Date</th>
                                                             <td>
                                                                  <?= ($order['dateDelivered'] == NULL || $order['dateDelivered'] == "0000-00-00 00:00:00") ?
-                                                                      "Not yet Deliver" : $order['dateDelivered'] ?>
+                                                                      "Not yet Deliver" : date_format(DateTime::createFromFormat('Y-m-d H:i:s', $order['dateDelivered']),"D d F Y | g:i A") ?>
+                                                                      
                                                             </td>
                                                        </tr>
                                                   </tbody>
@@ -76,19 +88,31 @@ $orderProducts = $getOD_Product->dbSelect("tb_orderdetail", "*", "od_id=" . $_GE
                                                        <tr>
                                                             <th>Transaction Mode</th>
                                                             <td>
-                                                                 <?= $order['Tmode'] == '1' ? "Cash On Payment" : "Cash On Delivery" ?>
+                                                                 <?= $transaction['tmode'] == 'cash_on_delivery' ? "Cash On Delivery" : "Credit Card" ?>
                                                             </td>
                                                        </tr>
                                                        <tr>
                                                             <th>Transaction Status</th>
                                                             <td>
-                                                                 <?= $order['Tstatus'] == '1' ? "Paid" : "Purchased" ?>
+                                                                 <?= $transaction['tstatus'] == 'pending' ? "Pending" : "Approved" ?>
                                                             </td>
                                                        </tr>
                                                        <tr>
                                                             <th>Transaction Date</th>
                                                             <td>
-                                                                 <?= $order['Tstatus'] == '1' ? $order['Tdate'] : "Not Yet Paid" ?>
+                                                                 <?php
+                                                                      if(!empty($transaction['tstatus'])){
+                                                                           if($transaction['tstatus'] == 'pending' || $transaction['tstatus'] == 'approved'){
+                                                                                ?>
+                                                                                     <?= date_format(DateTime::createFromFormat('Y-m-d H:i:s', $transaction['created_at']),"D d F Y | g:i A") ?>
+                                                                                     
+                                                                                <?php
+                                                                           }
+                                                                           else{
+                                                                                echo "Not Paid";
+                                                                           }
+                                                                      }
+                                                                 ?>
                                                             </td>
                                                        </tr>
                                                   </tbody>
@@ -134,7 +158,7 @@ $orderProducts = $getOD_Product->dbSelect("tb_orderdetail", "*", "od_id=" . $_GE
                                                                                                               <?= $orderProduct['quantity'] ?>
                                                                                                          </p>
                                                                                                          <p class="card-text">
-                                                                                                              Price: $<?= $productItem['pd_salePrice']==0? $productItem['pd_regularPrice']: $productItem['pd_salePrice']?>
+                                                                                                              Price: $<?= number_format($productItem['pd_salePrice'],2 ) ==0 ? number_format($productItem['pd_regularPrice'],2) : number_format($productItem['pd_salePrice'],2 ) ?>
                                                                                                          </p>
                                                                                                     </div>
                                                                                                </div>
@@ -167,13 +191,13 @@ $orderProducts = $getOD_Product->dbSelect("tb_orderdetail", "*", "od_id=" . $_GE
                                                        <tr>
                                                             <td>SubTotal</td>
                                                             <th class="text-end">$
-                                                                 <?= $order['subTotal'] ?>
+                                                                 $<?= number_format($order['subTotal'], 2) ?>
                                                             </th>
                                                        </tr>
                                                        <tr>
                                                             <td>Tax</td>
                                                             <th class="text-end">$
-                                                                 <?= $order['subTotal'] * 0.1 ?>
+                                                                 $<?= number_format($order['subTotal'], 2) ?>
                                                             </th>
                                                        </tr>
                                                        <tr>
@@ -184,7 +208,7 @@ $orderProducts = $getOD_Product->dbSelect("tb_orderdetail", "*", "od_id=" . $_GE
                                                        <tr>
                                                             <td>Total</td>
                                                             <th class="text-end">
-                                                                 <?= $order['totalPrice'] ?>
+                                                                 $<?= number_format($order['totalPrice'], 2) ?>
                                                             </th>
                                                        </tr>
                                                   </tbody>

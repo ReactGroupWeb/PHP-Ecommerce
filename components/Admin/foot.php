@@ -19,12 +19,16 @@
 <script src="../../assets/admin/vendors/chart.js/Chart.min.js"></script>
 <script src="../../assets/admin/vendors/jvectormap/jquery-jvectormap.min.js"></script>
 <script src="../../assets/admin/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<script src="../../assets/admin/vendors/owl-carousel-2/owl.carousel.min.js"></script>
 <!-- End plugin js for this page -->
 <script src="../../assets/admin/js/misc.js"></script>
 <!-- endinject -->
 <!-- Custom js for this page -->
 <script src="../../assets/admin/js/dashboard.js"></script>
+<script src="../../assets/admin/js/calendar.js"></script>
 <!-- End custom js for this page -->
+
+
 </body>
 
 </html>

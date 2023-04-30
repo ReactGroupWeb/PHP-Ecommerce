@@ -163,7 +163,7 @@
                $condition = "user_id = $user_id AND instance = 'cart'";
                $cart_items = $dbClass->dbDelete($table_shopping_cart, $condition);
 
-               header("Location: /");
+               header("Location: /thank-you");
           }
 
      }

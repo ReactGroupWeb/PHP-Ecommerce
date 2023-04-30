@@ -178,13 +178,14 @@
                                                             <h6 class="bg-warning fw-bold my-2 py-1 text-dark">Delivering</h6>
                                                        </div>
                                                        <div class="d-flex justify-content-center">
-                                                            <form action="../../../DB/frontend/accept_delivery.php" method="POST">
+                                                            <form action="../../../DB/frontend/accept_delivery.php" method="POST" class="m-0 ">
                                                                  <input type="hidden" name="user_id" value="<?= $user_id; ?>">
                                                                  <input type="hidden" name="order_id" value="<?= $order['od_id']; ?>">
-                                                                 <button type="submit" name="accept_delivered" class="btn btn-success btn-sm text-light fw-bold me-2"><i class="fa-solid fa-check fw-bold"></i></button>
+                                                                 <button type="submit" name="accept_delivered" class="btn btn-success btn-sm text-light py-2 fw-bold me-2"><i class="fa-solid fa-check fw-bold"></i></button>
                                                             </form>
-                                                            <!-- <a href="#" class="btn btn-success btn-sm text-light"><i class="fas fa-check"></i></a> -->
-                                                            <a href="/my-dashboard/order-detail?orderid=<?= $order['od_id']; ?>" class="btn btn-primary btn-sm text-light fw-bold"><i class="fas fa-eye me-2"></i>Detail</a>
+                                                            <p>
+                                                                 <a href="/my-dashboard/order-detail?orderid=<?= $order['od_id']; ?>" class="btn btn-primary btn-sm text-light fw-bold"><i class="fas fa-eye me-2"></i>Detail</a>
+                                                            </p>
                                                        </div>
                                                   </div>
                                                   <div class="col-md-7 text-right">
