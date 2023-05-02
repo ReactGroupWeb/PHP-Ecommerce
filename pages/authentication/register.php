@@ -23,7 +23,7 @@
           <div class="container-fluid page-body-wrapper full-page-wrapper">
                <div class="row w-100 m-0">
                     <div class="content-wrapper full-page-wrapper d-flex align-items-center auth login-bg">
-                         <div class="card col-lg-4 mx-auto">
+                         <div class="card col-lg-4 mx-auto card-bg">
                               <div class="card-body">
                                    <h3 class="card-title text-left mb-3 text-center">Register</h3>
                                    <?php if (isset($_GET['Insert'])) {

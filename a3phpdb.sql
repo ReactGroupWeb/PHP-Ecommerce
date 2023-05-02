@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 30, 2023 at 12:44 PM
+-- Generation Time: May 02, 2023 at 04:48 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.5
 
@@ -112,7 +112,9 @@ INSERT INTO `tb_order` (`od_id`, `us_id`, `firstname`, `lastname`, `phone`, `ema
 (7, 4, 'Sreypich', 'San', '012 546 9352', 'san.sreypich@gmail.com', 'H111, St 222, Sangkat Boeung Kak II, Khan Toul Kork, Phnom Penh, Cambodia', 'Phnom Penh', 'Cambodia', 'delivered', 90, 900, 990, '2023-04-13 10:00:03', '2023-04-20 06:58:18', '2023-04-20 11:59:17', '2023-04-13 10:00:03', '2023-04-13 10:00:03'),
 (8, 2, 'Putheara', 'Koeun', '0962862940', 'putheara768@gmail.com', 'H111, St 222, Sangkat Boeung Kak II, Khan Toul Kork, Phnom Penh, Cambodia', 'Phnom Penh', 'Cambodia', 'delivered', 7, 67, 73.7, '2023-04-18 13:36:09', '2023-04-20 06:59:40', '2023-04-20 12:05:55', '2023-04-18 13:36:09', '2023-04-18 13:36:09'),
 (9, 2, 'putheara', 'koeun', '0962862940', 'putheara768@gmail.com', 'H111, St 222, Sangkat Boeung Kak II, Khan Toul Kork, Phnom Penh, Cambodia', 'Phnom Penh', 'Cambodia', 'delivered', 2, 18, 19.8, '2023-04-19 10:09:20', '2023-04-20 06:59:40', '2023-04-20 12:05:58', '2023-04-19 10:09:20', '2023-04-19 10:09:20'),
-(10, 2, 'putheara', 'koeun', '0962862940', 'putheara768@gmail.com', 'H111, St 222, Sangkat Boeung Kak II, Khan Toul Kork, Phnom Penh, Cambodia', 'Phnom Penh', 'Cambodia', 'delivered', 98, 984, 1082.4, '2023-04-30 10:31:05', '2023-04-30 12:31:48', '2023-04-30 17:31:54', '2023-04-30 10:31:05', '2023-04-30 10:31:05');
+(10, 2, 'putheara', 'koeun', '0962862940', 'putheara768@gmail.com', 'H111, St 222, Sangkat Boeung Kak II, Khan Toul Kork, Phnom Penh, Cambodia', 'Phnom Penh', 'Cambodia', 'delivered', 98, 984, 1082.4, '2023-04-30 10:31:05', '2023-04-30 12:31:48', '2023-04-30 17:31:54', '2023-04-30 10:31:05', '2023-04-30 10:31:05'),
+(11, 2, 'putheara', 'koeun', '0962862940', 'putheara768@gmail.com', 'H111, St 222, Sangkat Boeung Kak II, Khan Toul Kork, Phnom Penh, Cambodia', 'Phnom Penh', 'Cambodia', 'ordered', 25, 250, 275, '2023-05-01 04:35:39', NULL, NULL, '2023-05-01 04:35:39', '2023-05-01 04:35:39'),
+(12, 3, 'Sopanharith', 'Re', '0123654895', 'ren.sopanharith@gmail.com', 'H111, St 222, Sangkat Boeung Kak II, Khan Toul Kork, Phnom Penh, Cambodia', 'Phnom Penh', 'Cambodia', 'delivered', 43, 427.5, 470.25, '2023-05-02 02:40:50', '2023-05-02 04:42:15', '2023-05-02 09:42:22', '2023-05-02 02:40:50', '2023-05-02 02:40:50');
 
 -- --------------------------------------------------------
 
@@ -157,7 +159,9 @@ INSERT INTO `tb_orderdetail` (`odt_id`, `od_id`, `pd_id`, `quantity`, `created_a
 (21, 8, 5, 1, '2023-04-18 13:36:09', '2023-04-18 13:36:09'),
 (22, 9, 13, 1, '2023-04-19 10:09:20', '2023-04-19 10:09:20'),
 (23, 10, 14, 1, '2023-04-30 10:31:05', '2023-04-30 10:31:05'),
-(24, 10, 15, 25, '2023-04-30 10:31:05', '2023-04-30 10:31:05');
+(24, 10, 15, 25, '2023-04-30 10:31:05', '2023-04-30 10:31:05'),
+(25, 11, 2, 10, '2023-05-01 04:35:39', '2023-05-01 04:35:39'),
+(26, 12, 4, 15, '2023-05-02 02:40:50', '2023-05-02 02:40:50');
 
 -- --------------------------------------------------------
 
@@ -184,9 +188,9 @@ CREATE TABLE `tb_product` (
 
 INSERT INTO `tb_product` (`pd_id`, `pd_name`, `pd_description`, `pd_image`, `pd_regularPrice`, `pd_salePrice`, `pd_sku`, `cg_id`, `pd_countInStock`, `pd_dateCreated`) VALUES
 (1, 'Yellow Banana', 'The best of tropical fruit ', '2023-03-27_04-05-42pm_fruit4.png', 35, 0, 'FF-0001', '2', 49, '2023-03-27 14:05:42'),
-(2, 'Watermelon', 'The most favorite fruit in Asia', '2023-03-27_04-06-42pm_fruit9.png', 25, 0, 'FF-0002', '4', 45, '2023-03-27 14:06:43'),
+(2, 'Watermelon', 'The most favorite fruit in Asia', '2023-03-27_04-06-42pm_fruit9.png', 25, 0, 'FF-0002', '4', 35, '2023-03-27 14:06:43'),
 (3, 'Avocado', 'The most flavor fruit', '2023-03-27_04-09-07pm_fruit10.png', 38.5, 37, 'FF-0003', '2', 94, '2023-03-27 14:09:08'),
-(4, 'Longan', 'The most sweetest fruit', '2023-03-27_04-12-00pm_fruit35.png', 30, 28.5, 'FF-0004', '2', 500, '2023-03-27 14:12:01'),
+(4, 'Longan', 'The most sweetest fruit', '2023-03-27_04-12-00pm_fruit35.png', 30, 28.5, 'FF-0004', '2', 485, '2023-03-27 14:12:01'),
 (5, 'Orange', 'The most popular fruit', '2023-03-27_04-13-10pm_fruit3.png', 32, 0, 'FF-0005', '1', 95, '2023-03-27 14:13:10'),
 (6, 'Guava', 'Guava Fruit', '2023-03-27_04-14-15pm_fruit8.png', 16, 0, 'FF-0006', '4', 248, '2023-03-27 14:14:17'),
 (7, 'Passion', 'Passion Fruit', '2023-03-27_04-16-51pm_fruit20.png', 35, 0, 'FF-0007', '1', 44, '2023-03-27 14:16:51'),
@@ -274,7 +278,9 @@ INSERT INTO `tb_transaction` (`id`, `us_id`, `od_id`, `tmode`, `tstatus`, `creat
 (7, 4, 7, 'card', 'approved', '2023-04-13 10:00:05', '2023-04-13 10:00:05'),
 (8, 2, 8, 'card', 'approved', '2023-04-18 13:36:12', '2023-04-18 13:36:12'),
 (9, 2, 9, 'cash_on_delivery', 'pending', '2023-04-19 10:09:20', '2023-04-19 10:09:20'),
-(10, 2, 10, 'cash_on_delivery', 'pending', '2023-04-30 10:31:05', '2023-04-30 10:31:05');
+(10, 2, 10, 'cash_on_delivery', 'pending', '2023-04-30 10:31:05', '2023-04-30 10:31:05'),
+(11, 2, 11, 'cash_on_delivery', 'pending', '2023-05-01 04:35:39', '2023-05-01 04:35:39'),
+(12, 3, 12, 'card', 'approved', '2023-05-02 02:40:52', '2023-05-02 02:40:52');
 
 -- --------------------------------------------------------
 
@@ -388,25 +394,25 @@ ALTER TABLE `tb_company`
 -- AUTO_INCREMENT for table `tb_order`
 --
 ALTER TABLE `tb_order`
-  MODIFY `od_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `od_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tb_orderdetail`
 --
 ALTER TABLE `tb_orderdetail`
-  MODIFY `odt_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `odt_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `tb_shopping_cart`
 --
 ALTER TABLE `tb_shopping_cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tb_transaction`
 --
 ALTER TABLE `tb_transaction`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

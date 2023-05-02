@@ -1,6 +1,8 @@
 <?php
-$maxperpage = 5;
-define("MAXPERPAGE", $maxperpage);
+    $maxperpage = 5;
+    $maxproductperpage = 8;
+    define("MAXPERPAGE", $maxperpage);
+    define("MAXPRODUCTPERPAGE", $maxproductperpage);
 ?>
 <script>
     function _(obj) {

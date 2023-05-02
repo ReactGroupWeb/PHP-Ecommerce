@@ -24,13 +24,20 @@
                $heading = "Product";
 
                $get_products = new dbClass();
+               $numpage = ceil($get_products->dbCount("tb_product") / MAXPRODUCTPERPAGE);
+               $pg = 1;
+               $offset = 0;
+               if (isset($_GET['pg'])) {
+                    $pg = $_GET['pg'];
+                    $offset = ($pg - 1) * MAXPRODUCTPERPAGE;
+               }
 
                $table_product = "tb_product as p";
                $table_category = "tb_category as c";
                
                $field = "p.pd_id, p.cg_id, p.pd_name, p.pd_image, p.pd_regularPrice, p.pd_salePrice, p.pd_dateCreated, c.cg_name AS category_name";
                $condition = "p.pd_countInStock != 0";
-               $order = "ORDER BY p.pd_dateCreated DESC limit 16";
+               $order = "ORDER BY p.pd_dateCreated DESC limit " . MAXPRODUCTPERPAGE . " offset $offset";
 
                $join_condition = "c.cg_id = p.cg_id";
                $table_join = $table_product . " INNER JOIN " . $table_category . " ON " . $join_condition;
@@ -122,19 +129,41 @@
           
           ?>
 
-          <div class="row">
-               <div class="col-lg-12 text-center">
-                    <div class="pagination-wrap">
-                         <ul>
-                              <li><a href="#">Prev</a></li>
-                              <li><a href="#">1</a></li>
-                              <li><a class="active" href="#">2</a></li>
-                              <li><a href="#">3</a></li>
-                              <li><a href="#">Next</a></li>
-                         </ul>
+          <!--start pagination -->
+          <?php
+               if ($numpage > 1){
+          ?>
+               <div class="row">
+                    <div class="col-lg-12 text-center">
+                         <div class="pagination-wrap">
+                              <ul>
+                                   <li>
+                                        <a class="page-link" href="/shop?pg=<?= ($pg > 1 ? $pg - 1 : 1) ?>"
+                                             aria-label="Previous">
+                                             <span aria-hidden="true">&laquo;</span>
+                                             <span class="sr-only">Previous</span>
+                                        </a>
+                                   </li>
+                                   <?php for ($i = 1; $i <= $numpage; $i++) { ?>
+                                        <li>
+                                             <a class="page-link <?= $pg == $i ? "active" : "" ?>"
+                                                  href="/shop?pg=<?= $i ?>"><?= $i ?></a>
+                                        </li>
+                                   <?php } ?>
+                                   <li>
+                                        <a class="page-link" href="/shop?pg=<?= ($pg < $numpage ? $pg + 1 : $numpage) ?>"
+                                             aria-label="Next">
+                                             <span aria-hidden="true">&raquo;</span>
+                                             <span class="sr-only">Next</span>
+                                        </a>
+                                   </li>
+                              </ul>
+                         </div>
                     </div>
                </div>
-          </div>
+          <?php }?>
+          <!--end pagination -->
+          
      </div>
 </div>
 <!-- end products -->

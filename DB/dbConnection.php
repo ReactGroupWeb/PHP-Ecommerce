@@ -13,7 +13,6 @@ class Dbh
         try {
             $dsn = 'mysql:host=' . $this->host . $this->port . ';dbname=' . $this->dbName;
             $conn = new PDO($dsn, $this->user, $this->pwd);
-            // $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             return $conn;

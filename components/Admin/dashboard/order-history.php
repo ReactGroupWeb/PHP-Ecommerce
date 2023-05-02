@@ -13,7 +13,8 @@
   $table_product = "tb_product as p";
 
   // fields
-  $field_order_history = "ts.tmode, ts.tstatus, ts.created_at, usr.us_name, usr.us_image, ord.od_id, ord.totalPrice, p.pd_name, p.pd_image, ordd.odt_id";
+  $field_order_history = "ts.tmode, ts.tstatus, ts.created_at, usr.us_name, usr.us_image, ord.od_id, p.pd_name, 
+                          p.pd_image, p.pd_regularPrice, p.pd_salePrice, ordd.odt_id, ordd.quantity";
   $conditon_transaction = "";
   $order_by_transaction = "ORDER BY ordd.odt_id DESC limit 10"; 
 
@@ -74,7 +75,10 @@
                         <span class="pl-2"><?= $order_history['us_name']; ?></span>
                       </td>
                       <td> <?= $order_history['od_id']; ?> </td>
-                      <td> $<?= number_format($order_history['totalPrice'], 2) ?> </td>
+                      <td>
+                        $<?= $order_history['pd_salePrice']  ? number_format($order_history['pd_salePrice'] * $order_history['quantity'], 2) : number_format($order_history['pd_regularPrice'] * $order_history['quantity'], 2);
+                          ?>
+                      </td>
                       <td> 
                         <img src="../../../assets/images/<?= strtolower($heading_product) ?>/<?= $order_history['pd_image']; ?>" alt="image" />
                         <span class="pl-2"><?= $order_history['pd_name']; ?></span> 

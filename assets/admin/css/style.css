@@ -19524,3 +19524,8 @@ div.tagsinput {
     width: 80% !important;
 
   }
+
+  .card-bg{
+  
+        background-color: rgba(0, 0, 0, 0.7) !important;
+       }
