@@ -47,7 +47,7 @@
           
 
           // redirect to router /
-          header("Location: /");
+          header("Location: /shopping-cart");
           exit();
      }
 ?>
