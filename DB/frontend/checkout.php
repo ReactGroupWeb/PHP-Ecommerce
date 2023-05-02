@@ -6,6 +6,12 @@
 
      $dbClass= new dbClass();
 
+     // ask for login, if not yet login
+     if (!isset($_SESSION['us_id'])) {
+          header("Location: /login");
+          exit;
+     }
+
      if(isset($_POST['place-order'])){
 
           // order properties
@@ -45,6 +51,7 @@
           $product_id = $_POST['pd_id'];
           $quantity = $_POST['quantity'];
 
+          // select shopping carts data
           $table_shopping_cart = "tb_shopping_cart";
           $fields = "*";
           $condition = "user_id = $user_id AND instance = 'cart'";

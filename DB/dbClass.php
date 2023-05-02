@@ -25,6 +25,8 @@
                $this->dbClose($conn);
                return $result;
           }
+
+
           public function dbSelectOne($table, $column = "*", $criteria = "", $clause = "")
           {
                if (empty($table))
@@ -48,6 +50,8 @@
                $this->dbClose($conn);
                return $result;
           }
+
+
           function dbInsert($table, $data = array())
           {
                if (empty($table) || empty($data)) {
@@ -67,6 +71,8 @@
                $this->dbClose($conn);
                return true;
           }
+
+
           public function dbDelete($table, $criteria) //dbDelete(" table name ", "id=".$id);
           {
                if (empty($table) || empty($criteria)) {
@@ -84,6 +90,8 @@
                $this->dbClose($conn);
                return true;
           }
+
+
           function dbUpdate($table, $data = array(), $criteria = "")
           {
                if (empty($table) || empty($data) || empty($criteria)) {
@@ -108,6 +116,8 @@
                $this->dbClose($conn);
                return true;
           }
+
+
           function dbCount($table = "", $criteria = "")
           {
                if (empty($table)) {
@@ -130,6 +140,7 @@
                return $num;
           }
 
+          
           function dbSelectLastInsertID($table) {
                if (empty($table)) {
                    return false;

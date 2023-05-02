@@ -3,6 +3,12 @@
      require_once "../dbClass.php";
      $dbClass= new dbClass();
 
+     // ask for login, if not yet login
+     if (!isset($_SESSION['us_id'])) {
+          header("Location: /login");
+          exit;
+     }
+
      if(isset($_POST['add-to-cart'])){
           
           if(!empty($_POST['user_id']) && !empty($_POST['product_id']) && !empty($_POST['instance']) && !empty($_POST['quantity'])){
